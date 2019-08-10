@@ -7,13 +7,13 @@
   --color__text--dark-bg: #fff;
   --color__text--light-bg: #000;
   --font-family__primary: sans-serif;
-  --img__hero: url(/usr/share/backgrounds/Halifax_Sunset_by_Vlad_Drobinin.jpg);
-  --img__about-me: url(/usr/share/backgrounds/warty-final-ubuntu.png);
-  --img__another-card: url(/usr/share/backgrounds/Definitive_Light_Zen_Orange_by_Pierre_Cante.jpg);
-  --img__foundation: url(/usr/share/backgrounds/Raindrops_On_The_Table_by_Alex_Fazit.jpg);
-  --img__comprehensive: url(/usr/share/backgrounds/El_Haouaria_by_Nusi_Nusi.jpg);
-  --img__portfolio: url(/usr/share/backgrounds/Crocus_Wallpaper_by_Roy_Tanck.jpg);
-  --img__something-else: url(/usr/share/backgrounds/Spices_in_Athens_by_Makis_Chourdakis.jpg);
+  --img__hero: url(../img/Halifax_Sunset_by_Vlad_Drobinin.jpg);
+  --img__about-me: url(../img/warty-final-ubuntu.png);
+  --img__another-card: url(../img/Definitive_Light_Zen_Orange_by_Pierre_Cante.jpg);
+  --img__foundation: url(../img/Raindrops_On_The_Table_by_Alex_Fazit.jpg);
+  --img__comprehensive: url(../img/El_Haouaria_by_Nusi_Nusi.jpg);
+  --img__portfolio: url(../img/Crocus_Wallpaper_by_Roy_Tanck.jpg);
+  --img__something-else: url(../img/Spices_in_Athens_by_Makis_Chourdakis.jpg);
   --line-height__content: 1.7em;
   --margin__main-content: 2.5em;
 }
