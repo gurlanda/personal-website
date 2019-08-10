@@ -1,5 +1,8 @@
 :root {
   --color__border: #eee;
+  --color__button--background: #fff;
+  --color__button--border: #444;
+  --color__button--text: #222;
   --color__link--unvisited: #ddd;
   --color__text--dark-bg: #fff;
   --color__text--light-bg: #000;
@@ -11,7 +14,7 @@
   --img__comprehensive: url(/usr/share/backgrounds/El_Haouaria_by_Nusi_Nusi.jpg);
   --img__portfolio: url(/usr/share/backgrounds/Crocus_Wallpaper_by_Roy_Tanck.jpg);
   --img__something-else: url(/usr/share/backgrounds/Spices_in_Athens_by_Makis_Chourdakis.jpg);
-  --line-height__content: 1.4em;
+  --line-height__content: 1.7em;
   --margin__main-content: 2.5em;
 }
 
@@ -26,7 +29,26 @@
   box-shadow: 0.1em 0.2em 0.3em 0.1em #ddd;
 }
 
+#contact__btn-phone, #contact__btn-email {
+  background: var(--color__button--background);
+  border-color: var(--color__button--border);
+  color: var(--color__button--text);
+  border-radius: 50rem;
+  border-style: solid;
+  border-width: 4px;
+  box-shadow: 0.1em 0.2em 0.3em 0.1em #ddd;
+  font-size: 1.5rem;
+  --margin-horizontal: 3rem;
+  --margin-vertical: 0.7rem;
+  margin-left: var(--margin-horizontal);
+  margin-right: var(--margin-horizontal);
+  margin-top: var(--margin-vertical);
+  margin-bottom: var(--margin-vertical);
+  padding: 0.5em;
+}
+
 #services__something-else div, #services__portfolio div, #services__comprehensive div, #services__foundation div, #another-card h2, #about-me h2 {
+  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   height: 8rem;
@@ -34,7 +56,6 @@
 }
 
 #footer a:link, #hero a:link {
-  color: var(--color__link);
   font-family: var(--font-family__primary);
   text-decoration: none;
 }
@@ -66,16 +87,20 @@ body {
   flex-direction: row;
   justify-content: center;
 }
+#hero a {
+  color: #000;
+}
 
 /* hero */
 #about-me {
   margin: var(--margin__main-content);
 }
 #about-me h2 {
-  align-items: flex-end;
   background-image: var(--img__about-me);
   display: flex;
   justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 2em;
 }
 #about-me p {
   line-height: var(--line-height__content);
@@ -86,10 +111,11 @@ body {
   margin: var(--margin__main-content);
 }
 #another-card h2 {
-  align-items: flex-end;
   background-image: var(--img__another-card);
   display: flex;
   justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 2em;
 }
 #another-card p {
   line-height: var(--line-height__content);
@@ -98,6 +124,9 @@ body {
 
 #services {
   margin: var(--margin__main-content);
+}
+#services h2 {
+  text-align: center;
 }
 
 #services__foundation {
@@ -165,13 +194,30 @@ body {
 }
 
 #contact {
+  display: flex;
+  flex-direction: column;
   margin: var(--margin__main-content);
+}
+#contact h2 {
+  text-align: center;
+}
+#contact p {
+  line-height: var(--line-height__content);
+}
+
+#footer {
+  background: #333;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
 }
 
 #footer__navbar {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+#footer__navbar a {
+  color: #fff;
 }
 
 /*# sourceMappingURL=styles.css.map */
