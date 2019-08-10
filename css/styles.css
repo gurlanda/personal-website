@@ -1,0 +1,177 @@
+:root {
+  --color__border: #eee;
+  --color__link--unvisited: #ddd;
+  --color__text--dark-bg: #fff;
+  --color__text--light-bg: #000;
+  --font-family__primary: sans-serif;
+  --img__hero: url(/usr/share/backgrounds/Halifax_Sunset_by_Vlad_Drobinin.jpg);
+  --img__about-me: url(/usr/share/backgrounds/warty-final-ubuntu.png);
+  --img__another-card: url(/usr/share/backgrounds/Definitive_Light_Zen_Orange_by_Pierre_Cante.jpg);
+  --img__foundation: url(/usr/share/backgrounds/Raindrops_On_The_Table_by_Alex_Fazit.jpg);
+  --img__comprehensive: url(/usr/share/backgrounds/El_Haouaria_by_Nusi_Nusi.jpg);
+  --img__portfolio: url(/usr/share/backgrounds/Crocus_Wallpaper_by_Roy_Tanck.jpg);
+  --img__something-else: url(/usr/share/backgrounds/Spices_in_Athens_by_Makis_Chourdakis.jpg);
+  --line-height__content: 1.4em;
+  --margin__main-content: 2.5em;
+}
+
+/* Mixins */
+/* is-a Card */
+/* is-a Card */
+/* Placeholders */
+#services__something-else, #services__portfolio, #services__comprehensive, #services__foundation, #another-card, #about-me {
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color__border);
+  box-shadow: 0.1em 0.2em 0.3em 0.1em #ddd;
+}
+
+#services__something-else div, #services__portfolio div, #services__comprehensive div, #services__foundation div, #another-card h2, #about-me h2 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 8rem;
+  margin: 0px;
+}
+
+#footer a:link, #hero a:link {
+  color: var(--color__link);
+  font-family: var(--font-family__primary);
+  text-decoration: none;
+}
+#footer li, #hero li {
+  list-style-type: none;
+}
+#footer li + li, #hero li + li {
+  margin-left: 2em;
+}
+
+/* Main styles */
+body {
+  margin: 0px;
+}
+
+#hero {
+  background-image: var(--img__hero);
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  height: 40em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3em;
+}
+#hero #hero__navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* hero */
+#about-me {
+  margin: var(--margin__main-content);
+}
+#about-me h2 {
+  align-items: flex-end;
+  background-image: var(--img__about-me);
+  display: flex;
+  justify-content: center;
+}
+#about-me p {
+  line-height: var(--line-height__content);
+  margin: 1.5em;
+}
+
+#another-card {
+  margin: var(--margin__main-content);
+}
+#another-card h2 {
+  align-items: flex-end;
+  background-image: var(--img__another-card);
+  display: flex;
+  justify-content: center;
+}
+#another-card p {
+  line-height: var(--line-height__content);
+  margin: 1.5em;
+}
+
+#services {
+  margin: var(--margin__main-content);
+}
+
+#services__foundation {
+  margin-bottom: 1.5em;
+}
+#services__foundation div {
+  background-image: var(--img__foundation);
+}
+#services__foundation h3 {
+  text-align: center;
+}
+#services__foundation ul {
+  line-height: var(--line-height__content);
+}
+#services__foundation li + li {
+  margin-top: 1em;
+}
+
+#services__comprehensive {
+  margin-bottom: 1.5em;
+}
+#services__comprehensive div {
+  background-image: var(--img__comprehensive);
+}
+#services__comprehensive h3 {
+  text-align: center;
+}
+#services__comprehensive ul {
+  line-height: var(--line-height__content);
+}
+#services__comprehensive li + li {
+  margin-top: 1em;
+}
+
+#services__portfolio {
+  margin-bottom: 1.5em;
+}
+#services__portfolio div {
+  background-image: var(--img__portfolio);
+}
+#services__portfolio h3 {
+  text-align: center;
+}
+#services__portfolio ul {
+  line-height: var(--line-height__content);
+}
+#services__portfolio li + li {
+  margin-top: 1em;
+}
+
+#services__something-else {
+  margin-bottom: 1.5em;
+}
+#services__something-else div {
+  background-image: var(--img__something-else);
+}
+#services__something-else h3 {
+  text-align: center;
+}
+#services__something-else ul {
+  line-height: var(--line-height__content);
+}
+#services__something-else li + li {
+  margin-top: 1em;
+}
+
+#contact {
+  margin: var(--margin__main-content);
+}
+
+#footer__navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,178 @@
+:root {
+	--color__border: #eee;
+	--color__link--unvisited: #ddd;
+	--color__text--dark-bg: #fff;
+	--color__text--light-bg: #000;
+
+	--font-family__primary: sans-serif;
+
+	--img__hero: url(/usr/share/backgrounds/Halifax_Sunset_by_Vlad_Drobinin.jpg); 
+	--img__about-me: url(/usr/share/backgrounds/warty-final-ubuntu.png);
+	--img__another-card: url(/usr/share/backgrounds/Definitive_Light_Zen_Orange_by_Pierre_Cante.jpg);
+	--img__foundation: url(/usr/share/backgrounds/Raindrops_On_The_Table_by_Alex_Fazit.jpg);
+	--img__comprehensive: url(/usr/share/backgrounds/El_Haouaria_by_Nusi_Nusi.jpg);
+	--img__portfolio: url(/usr/share/backgrounds/Crocus_Wallpaper_by_Roy_Tanck.jpg);
+	--img__something-else: url(/usr/share/backgrounds/Spices_in_Athens_by_Makis_Chourdakis.jpg);
+
+	--line-height__content: 1.4em;
+
+	--margin__main-content: 2.5em;
+}
+
+
+
+/* Mixins */
+/* is-a Card */
+@mixin SectionCard($img) {
+	@extend %Card;
+
+	h2 {
+		align-items: flex-end;
+		background-image: $img;
+		display: flex;
+		justify-content: center;
+		@extend %ImageContainer;
+	}
+
+	p {
+		line-height: var(--line-height__content);
+		margin: 1.5em;
+	}
+}
+
+/* is-a Card */
+@mixin ServiceCard($img) {
+	@extend %Card;
+
+	margin-bottom: 1.5em;
+
+	div {
+		background-image: $img;
+		@extend %ImageContainer;
+	}
+
+	h3 {
+		text-align: center;
+	}
+
+	ul {
+		line-height: var(--line-height__content);
+	}
+
+	li + li {
+		margin-top: 1em;
+	}
+}
+
+
+
+/* Placeholders */
+%Card {
+	border-style: solid;
+	border-width: 1px;
+	border-color: var(--color__border);
+	box-shadow: 0.1em 0.2em 0.3em 0.1em #ddd; 
+}
+
+%ImageContainer {
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 8rem;
+	margin: 0px;
+}
+
+%Navbar {
+	a:link {
+		color: var(--color__link);
+		font-family: var(--font-family__primary);
+		text-decoration: none;
+	}
+
+	li {
+		list-style-type: none;
+	}
+
+	li + li {
+		margin-left: 2em;
+	}
+}
+
+
+
+/* Main styles */
+body {
+	margin: 0px;
+}
+
+
+#hero {
+	background-image: var(--img__hero);
+	background-size: cover;
+	background-attachment: fixed;
+	
+	display: flex;
+	height: 40em;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 3em;
+
+	#hero__navbar {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	@extend %Navbar;
+} /* hero */
+
+
+#about-me {
+	margin: var(--margin__main-content);
+	@include SectionCard(var(--img__about-me));
+}
+
+
+#another-card {
+	margin: var(--margin__main-content);
+	@include SectionCard(var(--img__another-card));
+}
+
+
+#services {
+	margin: var(--margin__main-content);
+}
+
+
+	#services__foundation {
+		@include ServiceCard(var(--img__foundation));
+	}
+
+	#services__comprehensive {
+		@include ServiceCard(var(--img__comprehensive));
+	}
+
+	#services__portfolio {
+		@include ServiceCard(var(--img__portfolio));
+	}
+
+	#services__something-else {
+		@include ServiceCard(var(--img__something-else));
+	}
+
+
+
+#contact {
+	margin: var(--margin__main-content);
+}
+
+
+
+#footer {
+	@extend %Navbar;
+}
+	#footer__navbar {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
