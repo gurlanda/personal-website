@@ -1,13 +1,26 @@
 :root {
   --color__border: #eee;
   --color__button--background: #fff;
-  --color__button--border: #444;
-  --color__button--text: #222;
-  --color__link--unvisited: #ddd;
-  --color__text--dark-bg: #fff;
-  --color__text--light-bg: #000;
-  --font-family__primary: sans-serif;
+  --color__button--border: #4d4d4d;
+  --color__button--text: #3d3d3d;
+  --color__link--unvisited: white;
+  --color__text--heading-dark: #303030;
+  --color__text--heading-light: #f3f3f3;
+  --color__text--content-dark: #555;
+  --color__text--content-light: #fff;
+  --font-family__hero--navbar: "Open Sans", sans-serif;
+  --font-family__hero--main-heading: "Raleway", sans-serif;
+  --font-family__hero--subheading: "Open Sans", sans-serif;
+  --font-family__section-card--heading: "Raleway", sans-serif;
+  --font-family__section-card--content: "Open Sans", sans-serif;
+  --font-family__service-card--heading: "Raleway", sans-serif;
+  --font-family__service-card--content: "Open Sans", sans-serif;
+  --font-family__standalone--heading: "Raleway", sans-serif;
+  --font-family__standalone--content: "Open Sans", sans-serif;
+  --font-family__button: "Raleway", sans-serif;
+  --font-family__footer--navbar: "Open Sans", sans-serif;
   --img__hero: url(../img/Halifax_Sunset_by_Vlad_Drobinin.jpg);
+  --img__nav-btn: url(../img/baseline-menu-24px.svg);
   --img__about-me: url(../img/warty-final-ubuntu.png);
   --img__another-card: url(../img/Definitive_Light_Zen_Orange_by_Pierre_Cante.jpg);
   --img__foundation: url(../img/Raindrops_On_The_Table_by_Alex_Fazit.jpg);
@@ -15,7 +28,7 @@
   --img__portfolio: url(../img/Crocus_Wallpaper_by_Roy_Tanck.jpg);
   --img__something-else: url(../img/Spices_in_Athens_by_Makis_Chourdakis.jpg);
   --line-height__content: 1.7em;
-  --margin__main-content: 2.5em;
+  --margin__main-content: 1.5em;
 }
 
 /* Mixins */
@@ -33,18 +46,19 @@
   background: var(--color__button--background);
   border-color: var(--color__button--border);
   color: var(--color__button--text);
-  border-radius: 50rem;
+  border-radius: 10px;
   border-style: solid;
-  border-width: 4px;
+  border-width: 1.5px;
   box-shadow: 0.1em 0.2em 0.3em 0.1em #ddd;
+  font-family: var(--font-family__button);
   font-size: 1.5rem;
-  --margin-horizontal: 3rem;
-  --margin-vertical: 0.7rem;
+  --margin-horizontal: 1.5rem;
+  --margin-vertical: 0.5rem;
   margin-left: var(--margin-horizontal);
   margin-right: var(--margin-horizontal);
   margin-top: var(--margin-vertical);
   margin-bottom: var(--margin-vertical);
-  padding: 0.5em;
+  padding: 0.1em;
 }
 
 #services__something-else div, #services__portfolio div, #services__comprehensive div, #services__foundation div, #another-card h2, #about-me h2 {
@@ -55,15 +69,23 @@
   margin: 0px;
 }
 
-#footer a:link, #hero a:link {
-  font-family: var(--font-family__primary);
-  text-decoration: none;
+#contact {
+  display: flex;
+  flex-direction: column;
 }
-#footer li, #hero li {
-  list-style-type: none;
+#contact h2 {
+  margin-bottom: 0px;
+  color: var(--color__text--heading-dark);
+  text-align: center;
+  font-family: var(--font-family__standalone--heading);
+  font-size: 1.7rem;
 }
-#footer li + li, #hero li + li {
-  margin-left: 2em;
+#contact p {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  line-height: var(--line-height__content);
+  font-family: var(--font-family__standalone--content);
+  color: var(--color__text--content-dark);
 }
 
 /* Main styles */
@@ -74,11 +96,12 @@ body {
 
 #hero {
   display: flex;
-  height: 40em;
+  height: 30em;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 3em;
+  justify-content: flex-end;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 2rem;
   overflow: hidden;
   position: relative;
 }
@@ -92,26 +115,82 @@ body {
   background: var(--img__hero);
   background-size: cover;
   will-change: transform;
-  z-index: -5;
+  z-index: -1;
   overflow: hidden;
 }
-#hero #hero__navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
 #hero h1 {
-  color: #fff;
+  margin: 0rem;
+  color: var(--color__text--heading-light);
+  text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.55);
+  font-family: var(--font-family__hero--main-heading);
+  font-weight: 900;
   font-size: 3rem;
+  text-align: left;
+  line-height: 3rem;
 }
-#hero h3 {
-  color: #fff;
-}
-#hero a {
-  color: #000;
+#hero p {
+  margin-top: 0.5rem;
+  color: var(--color__text--content-light);
+  text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.55);
+  font-family: var(--font-family__hero--subheading);
+  text-align: left;
 }
 
 /* hero */
+#hero__nav-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--font-family__hero--navbar);
+}
+#hero__nav-div a {
+  color: var(--color__text--content-light);
+  text-decoration: none;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+#hero__nav-div li {
+  margin-left: 1rem;
+  list-style-type: none;
+}
+
+#hero__nav-div--btn {
+  height: 3rem;
+  border-style: none;
+  background: rgba(50, 50, 50, 0.2);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  order: 2;
+}
+#hero__nav-div--btn:focus {
+  outline-style: solid;
+  outline-color: #222;
+}
+
+#hero__nav-div--btn--icon {
+  display: block;
+  background-image: var(--img__nav-btn);
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: invert(100%);
+  height: 30px;
+  width: 30px;
+}
+
+#hero__navbar {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  width: 0%;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding-top: 1rem;
+  background: rgba(50, 50, 50, 0.2);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  transition: all 1s;
+}
+
 #main-content {
   background-color: #fff;
   padding-top: 2rem;
@@ -122,13 +201,22 @@ body {
 }
 #about-me h2 {
   background-image: var(--img__about-me);
-  color: #fff;
+  color: var(--color__text--heading-light);
+  text-shadow: 0.1px 0.5px 2px black;
+  font-family: var(--font-family__section-card--heading);
+  font-size: 2.5rem;
+  text-transform: uppercase;
   display: flex;
   justify-content: center;
+  text-align: center;
   align-items: flex-end;
-  padding-bottom: 2em;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  padding-bottom: 2rem;
 }
 #about-me p {
+  color: var(--color__text--content-dark);
+  font-family: var(--font-family__section-card--content);
   line-height: var(--line-height__content);
   margin: 1.5em;
 }
@@ -138,13 +226,22 @@ body {
 }
 #another-card h2 {
   background-image: var(--img__another-card);
-  color: #fff;
+  color: var(--color__text--heading-light);
+  text-shadow: 0.1px 0.5px 2px black;
+  font-family: var(--font-family__section-card--heading);
+  font-size: 2.5rem;
+  text-transform: uppercase;
   display: flex;
   justify-content: center;
+  text-align: center;
   align-items: flex-end;
-  padding-bottom: 2em;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  padding-bottom: 2rem;
 }
 #another-card p {
+  color: var(--color__text--content-dark);
+  font-family: var(--font-family__section-card--content);
   line-height: var(--line-height__content);
   margin: 1.5em;
 }
@@ -153,6 +250,8 @@ body {
   margin: var(--margin__main-content);
 }
 #services h2 {
+  color: var(--color__text--heading-dark);
+  font-family: var(--font-family__standalone--heading);
   text-align: center;
 }
 
@@ -163,9 +262,20 @@ body {
   background-image: var(--img__foundation);
 }
 #services__foundation h3 {
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  color: var(--color__text--heading-dark);
+  font-family: var(--font-family__service-card--heading);
+  font-size: 1.5rem;
   text-align: center;
 }
 #services__foundation ul {
+  padding: 0.7rem;
+  margin: 0rem;
+  list-style-position: inside;
+  list-style-type: none;
+  color: var(--color__text--content-dark);
+  font-family: var(--font-family__service-card--content);
   line-height: var(--line-height__content);
 }
 #services__foundation li + li {
@@ -179,9 +289,20 @@ body {
   background-image: var(--img__comprehensive);
 }
 #services__comprehensive h3 {
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  color: var(--color__text--heading-dark);
+  font-family: var(--font-family__service-card--heading);
+  font-size: 1.5rem;
   text-align: center;
 }
 #services__comprehensive ul {
+  padding: 0.7rem;
+  margin: 0rem;
+  list-style-position: inside;
+  list-style-type: none;
+  color: var(--color__text--content-dark);
+  font-family: var(--font-family__service-card--content);
   line-height: var(--line-height__content);
 }
 #services__comprehensive li + li {
@@ -195,9 +316,20 @@ body {
   background-image: var(--img__portfolio);
 }
 #services__portfolio h3 {
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  color: var(--color__text--heading-dark);
+  font-family: var(--font-family__service-card--heading);
+  font-size: 1.5rem;
   text-align: center;
 }
 #services__portfolio ul {
+  padding: 0.7rem;
+  margin: 0rem;
+  list-style-position: inside;
+  list-style-type: none;
+  color: var(--color__text--content-dark);
+  font-family: var(--font-family__service-card--content);
   line-height: var(--line-height__content);
 }
 #services__portfolio li + li {
@@ -211,9 +343,20 @@ body {
   background-image: var(--img__something-else);
 }
 #services__something-else h3 {
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  color: var(--color__text--heading-dark);
+  font-family: var(--font-family__service-card--heading);
+  font-size: 1.5rem;
   text-align: center;
 }
 #services__something-else ul {
+  padding: 0.7rem;
+  margin: 0rem;
+  list-style-position: inside;
+  list-style-type: none;
+  color: var(--color__text--content-dark);
+  font-family: var(--font-family__service-card--content);
   line-height: var(--line-height__content);
 }
 #services__something-else li + li {
@@ -221,32 +364,33 @@ body {
 }
 
 #contact {
-  display: flex;
-  flex-direction: column;
   padding-bottom: var(--margin__main-content);
   margin-left: var(--margin__main-content);
   margin-right: var(--margin__main-content);
 }
-#contact h2 {
-  text-align: center;
-}
-#contact p {
-  line-height: var(--line-height__content);
-}
 
 #footer {
   background: #333;
-  padding-top: 3rem;
-  padding-bottom: 2rem;
+  padding: 1.5rem 1rem 1.2rem;
 }
 
 #footer__navbar {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  font-family: var(--font-family__footer--navbar);
 }
 #footer__navbar a {
   color: #fff;
+}
+#footer__navbar a:link {
+  text-decoration: none;
+}
+#footer__navbar li {
+  list-style-type: none;
+}
+#footer__navbar li + li {
+  margin-left: 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
