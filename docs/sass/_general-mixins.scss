@@ -1,0 +1,20 @@
+// Custom shortcut properties for setting margins and paddings
+@mixin margin-sides($width) {
+	margin-left: $width;
+	margin-right: $width
+}
+
+@mixin margin-caps($width) {
+	margin-top: $width;
+	margin-bottom: $width
+}
+
+@mixin padding-sides($width) {
+	padding-left: $width;
+	padding-right: $width
+}
+
+@mixin padding-caps($width) {
+	padding-top: $width;
+	padding-bottom: $width
+}
