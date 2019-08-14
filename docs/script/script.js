@@ -22,3 +22,29 @@ let navHandler = {
 
 let btnHeroNav = document.getElementById("hero__nav-div--btn");
 btnHeroNav.addEventListener("click", navHandler);
+
+
+// Email button
+function emailHandler() {
+	// This obfuscation is for protection against spam bots
+	let eml = "ma" + "il" + "to" + ": " + "Gam" + "lie"
+		+ "lUr" + "lan" + "da." + "Free" + "lanc" + "ing"
+		+ "@g" + "mai" + "l.com";
+
+	window.open(eml);
+}
+
+let btnContactEmail = document.getElementById("contact__btn-email");
+btnContactEmail.addEventListener("click", emailHandler);
+
+
+// Phone button
+function phoneHandler() {
+	// This obfuscation is for protection against spam bots
+	let phn = "te" + "l:6" + "61" + "34" + "785" + "48";
+
+	window.open(phn);
+}
+
+let btnContactPhone = document.getElementById("contact__btn-phone");
+btnContactPhone.addEventListener("click", phoneHandler);

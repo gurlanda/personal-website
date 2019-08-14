@@ -14,12 +14,23 @@
 
 @mixin SectionCard($img) {
 	@extend %Card;
-	margin-bottom: 1rem;
+
+	margin-top: 15;
+	margin-bottom: 17vh;
+	
+	box-shadow: 0.1em 0.2em 1rem 0.1em #ddd; 
+
+	.section-card__img {
+		grid-area: im;
+		background-image: $img;
+		background-size: cover;
+		background-attachment: fixed;
+	}
 
 	h2 {
-		background-image: $img;
-		color: var(--color__text--heading-light);
-		text-shadow: 0.1px 0.5px 2px black;
+		grid-area: h;
+		color: var(--color__text--heading-dark);
+		text-shadow: 0.1px 0.5px 2px rgba(0,0,0,0.3);
 
 		font-family: var(--font-family__section-card--heading);
 		font-size: 2.5rem;
@@ -36,6 +47,7 @@
 	}
 
 	p {
+		grid-area: p;
 		color: var(--color__text--content-dark);
 		font-family: var(--font-family__section-card--content);
 		line-height: var(--line-height__content);
@@ -91,7 +103,6 @@
 	border-style: solid;
 	border-width: 1px;
 	border-color: var(--color__border);
-	box-shadow: 0.1em 0.2em 1rem 0.1em #ddd; 
 	background-color: var(--color__main-background);
 }
 
@@ -111,6 +122,9 @@
 	@include margin-sides(1.5rem);
 	@include margin-caps(0.5rem);
 	padding: 0.1em;
+
+	width: 85%;
+	max-width: 25rem;
 }
 
 %ImageContainer {
@@ -125,6 +139,9 @@
 %Standalone {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
 	@include padding-sides(1rem);
 
 	h2 {
@@ -133,10 +150,11 @@
 		color: var(--color__text--heading-dark);
 		text-align: center;
 		font-family: var(--font-family__standalone--heading);
-		font-size: 1.7rem;
+		font-size: 2rem;
 	}
 
 	p {
+		max-width: 30rem;
 		margin-top: 0.5rem;
 		margin-bottom: 1rem;
 		line-height: var(--line-height__content);
@@ -155,11 +173,12 @@ body {
 
 #hero {
 	display: flex;
-	height: 30em;
+	height: 100vh;
+	box-sizing: border-box;
 	flex-direction: column;
 	justify-content: flex-end;
-	@include padding-sides(1.5rem);
-	padding-bottom: 2rem;
+	@include padding-sides(10vh);
+	padding-bottom: 10vh;
 	overflow: hidden;
 	position: relative;
 
@@ -173,7 +192,7 @@ body {
 		left: 0;
 		background: var(--img__hero);
 		background-size: cover;
-		background-color: #aaa;
+		background-color: #bbb;
 		background-blend-mode: multiply;
 		will-change: transform; // creates a new paint layer
 		z-index: -1;
@@ -187,9 +206,10 @@ body {
 
 		font-family: var(--font-family__hero--main-heading);
 		font-weight: 900;
-		font-size: 3rem;
+		font-size: 4.5rem;
 		text-align: left;
-		line-height: 3rem; 
+		line-height: 4rem; 
+		max-width: 24rem;
 	}
 
 	p {
@@ -198,7 +218,9 @@ body {
 		text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.55);
 
 		font-family: var(--font-family__hero--subheading);
+		font-size: 1.1rem;
 		text-align: left;
+		max-width: 28rem;
 	}
 } /* hero */
 
@@ -206,7 +228,6 @@ body {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
-
 
 		position: absolute;
 		top: 0;
@@ -222,49 +243,27 @@ body {
 		}
 
 		li {
-			margin-left: 1rem;
+			margin-left: 3vw;
 			list-style-type: none;
 		}
 
 	}
-		#hero__nav-div--btn {
-			height: 3rem;
-
-			border-style: none;
-
-			background: rgba(50, 50, 50, 0.2);
-			box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
-			order: 2;
-
-			&:focus {
-				outline-style: solid;
-				outline-color: #222;
-			}
-		}
-			#hero__nav-div--btn--icon {
-				display: block;
-				background-image: var(--img__nav-btn);
-				background-repeat: no-repeat;
-				background-size: cover;
-				filter: invert(100%);
-				height: 30px;
-				width: 30px;
-			}
-
 		#hero__navbar {
 			display: flex;
 			flex-direction: row;
 			overflow: hidden;
-			width: 0%;
+			height: 15%;
+			width: 100vw;
 			flex-wrap: nowrap;
-			justify-content: space-around;
-			padding-top: 1rem;
-
-			background: rgba(50, 50, 50, 0.2);
-			box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
-
-			transition: all 0.55s;
+			justify-content: flex-start;
+			padding-top: 2vh;
 		}
+		
+		#hero__nav-div--btn {
+			display: none;
+		}
+			#hero__nav-div--btn--icon {
+			}
 
 
 #main-content {
@@ -274,12 +273,24 @@ body {
 
 #about-me {
 	margin: var(--margin__main-content);
+	display: grid;
+	grid-template-columns: 7fr 6fr;
+	grid-template-areas:
+		"h im"
+		"p im"
+		"p im";
 	@include SectionCard(var(--img__about-me));
 }
 
 
 #another-card {
 	margin: var(--margin__main-content);
+	display: grid;
+	grid-template-columns: 4fr 5fr;
+	grid-template-areas:
+		"im h"
+		"im p"
+		"im p";
 	@include SectionCard(var(--img__another-card));
 }
 
@@ -288,12 +299,21 @@ body {
 	margin: var(--margin__main-content);
 
 	h2 {
+		margin-bottom: 1.7rem;
 		color: var(--color__text--heading-dark);
 		font-family: var(--font-family__standalone--heading);
+		font-size: 4rem;
 		text-align: center;
+		text-shadow: 1px 1px 0.2px rgba(0,0,0,0.3);
 	}
 }
 
+	#services__cards {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 0.5rem;
+		filter: drop-shadow(0.1rem 0.2rem 1rem rgba(0,0,0,0.1));
+	}
 
 	#services__foundation {
 		@include ServiceCard(var(--img__foundation));
@@ -316,6 +336,7 @@ body {
 #contact {
 	@extend %Standalone;
 
+	height: 70vh;
 	padding-bottom: var(--margin__main-content);
 	@include margin-sides(var(--margin__main-content));
 
@@ -332,8 +353,33 @@ body {
 
 #footer {
 	background: #333;
+	outline-style: solid;
+	outline-width: 2px;
+	outline-color: #535353;
+	outline-offset: 3px;
 
-	padding: 1.5rem 1rem 1.2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 2.5rem;
+	padding-bottom: 2rem;
+
+	/*
+	&::before {
+		display: block;
+		content: " ";
+		height: 1px;
+		@include border-caps(1px, solid, #aaa);
+		flex: 1;
+	}
+
+	&::after {
+		display: block;
+		content: " ";
+		height: 1px;
+		@include border-caps(1px, solid, #aaa);
+		flex: 1;
+	} */
 }
 	#footer__navbar {
 		display: flex;
@@ -341,6 +387,9 @@ body {
 		justify-content: center;
 
 		font-family: var(--font-family__footer--navbar);
+		@include border-sides(2px, solid, #aaa);
+
+		@include padding-sides(0.5rem);
 
 		a {
 			color: #fff;
@@ -358,3 +407,4 @@ body {
 			margin-left: 1rem;
 		}
 	}
+

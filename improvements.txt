@@ -1,0 +1,40 @@
+Code design:
+- I don't like how I have to modify either Standalone or the
+	Contact section separately. How can I change this in the
+	future?
+- When making stylesheets for different sizes, it doesn't feel
+	right that most of the code is the same between files.
+
+
+Questions to answer:
+- With what kinds of elements and environments should I choose
+	vw/vh or rem?
+- How does padding and margin work with different display modes?
+
+
+All sizes:
+- Change height of header to be 100vh
+- Change the background color of the hero to #bbb;
+- Fix the navbar
+- Check whether or not the elements are cramped
+- Add text shadows to the proper headings
+
+
+Smallest size: 
+- Fix contact button widths & size
+
+
+>= Medium-small:
+- Decorate the footer
+
+
+>= Medium-large:
+- Change the Services heading so that it's closer to the cards
+
+Large:
+- On smaller screens, the fonts for the hero section are way
+	smaller than the fonts for the content. It looks wrong.
+
+	I know that I used viewport sizes for the hero section
+	to make sure that the fonts don't get too big on large
+	screens, so how can I fix this?
