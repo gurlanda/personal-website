@@ -34,6 +34,14 @@
   --line-height__content: 2rem;
   --margin__main-content: 1.5em;
   --margin__card-sides: 1rem;
+  --img__nav-btn: url(../img/baseline-menu-24px.svg);
+  --img__hero: url(../img/small/Halifax_Sunset_by_Vlad_Drobinin.jpg);
+  --img__about-me: url(../img/small/warty-final-ubuntu.png);
+  --img__another-card: url(../img/small/Definitive_Light_Zen_Orange_by_Pierre_Cante.jpg);
+  --img__foundation: url(../img/small/Raindrops_On_The_Table_by_Alex_Fazit.jpg);
+  --img__comprehensive: url(../img/small/El_Haouaria_by_Nusi_Nusi.jpg);
+  --img__portfolio: url(../img/small/Crocus_Wallpaper_by_Roy_Tanck.jpg);
+  --img__something-else: url(../img/small/Spices_in_Athens_by_Makis_Chourdakis.jpg);
 }
 
 /* Mixins */
@@ -114,21 +122,10 @@ body {
   padding-bottom: 3rem;
   overflow: hidden;
   position: relative;
-}
-#hero::after {
-  content: " ";
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
   background: var(--img__hero);
   background-size: cover;
   background-color: #bbb;
   background-blend-mode: multiply;
-  will-change: transform;
-  z-index: -1;
-  overflow: hidden;
 }
 #hero h1 {
   margin: 0rem;

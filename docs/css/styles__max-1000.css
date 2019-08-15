@@ -34,6 +34,14 @@
   --line-height__content: 2rem;
   --margin__main-content: 1.5em;
   --margin__card-sides: 1rem;
+  --img__nav-btn: url(../img/baseline-menu-24px.svg);
+  --img__hero: url(../img/medium/Halifax_Sunset_by_Vlad_Drobinin.jpg);
+  --img__about-me: url(../img/medium/warty-final-ubuntu.png);
+  --img__another-card: url(../img/medium/Definitive_Light_Zen_Orange_by_Pierre_Cante.jpg);
+  --img__foundation: url(../img/medium/Raindrops_On_The_Table_by_Alex_Fazit.jpg);
+  --img__comprehensive: url(../img/medium/El_Haouaria_by_Nusi_Nusi.jpg);
+  --img__portfolio: url(../img/medium/Crocus_Wallpaper_by_Roy_Tanck.jpg);
+  --img__something-else: url(../img/medium/Spices_in_Athens_by_Makis_Chourdakis.jpg);
 }
 
 /* Mixins */
