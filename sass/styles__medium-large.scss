@@ -1,0 +1,418 @@
+@import 'root-variables';
+
+:root {
+	--line-height__content: 2rem;
+
+	--margin__main-content: 1.5em;
+	--margin__card-sides: 1rem;
+
+	--img__nav-btn: url(../img/baseline-menu-24px.svg);
+	--img__hero: url(../img/medium-large/Halifax_Sunset_by_Vlad_Drobinin.jpg); 
+	--img__about-me: url(../img/medium-large/warty-final-ubuntu.png);
+	--img__another-card: url(../img/medium-large/Definitive_Light_Zen_Orange_by_Pierre_Cante.jpg);
+	--img__foundation: url(../img/medium-large/Raindrops_On_The_Table_by_Alex_Fazit.jpg);
+	--img__comprehensive: url(../img/medium-large/El_Haouaria_by_Nusi_Nusi.jpg);
+	--img__portfolio: url(../img/medium-large/Crocus_Wallpaper_by_Roy_Tanck.jpg);
+	--img__something-else: url(../img/medium-large/Spices_in_Athens_by_Makis_Chourdakis.jpg);
+}
+
+/* Mixins */
+/* is-a Card */
+@import '_general-mixins.scss';
+
+@mixin SectionCard($img) {
+	@extend %Card;
+
+	margin-top: 15;
+	margin-bottom: 17vh;
+	
+	box-shadow: 0.1em 0.2em 1rem 0.1em #ddd; 
+
+	.section-card__img {
+		grid-area: im;
+		background-image: $img;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+
+	h2 {
+		grid-area: h;
+		color: var(--color__text--heading-dark);
+		text-shadow: 0.1px 0.5px 2px rgba(0,0,0,0.3);
+
+		font-family: var(--font-family__section-card--heading);
+		font-size: 2.5rem;
+		text-transform: uppercase;
+
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		align-items: flex-end;
+
+		@include padding-sides(0.8rem);
+		padding-bottom: 2rem;
+		@extend %ImageContainer;
+	}
+
+	p {
+		grid-area: p;
+		color: var(--color__text--content-dark);
+		font-family: var(--font-family__section-card--content);
+		line-height: var(--line-height__content);
+		@include margin-caps(1rem);
+		@include  margin-sides(var(--margin__card-sides));
+	}
+}
+
+/* is-a Card */
+@mixin ServiceCard($img) {
+	@extend %Card;
+
+	margin-bottom: 1.5em;
+
+	div {
+		background-image: $img;
+		@extend %ImageContainer;
+	}
+
+	h3 {
+		margin-top: 1rem;
+		margin-bottom: 0rem;
+		@include margin-sides(var(--margin__card-sides));
+
+		color: var(--color__text--heading-dark);
+		font-family: var(--font-family__service-card--heading);
+		font-size: 1.5rem;
+		text-align: center;
+	}
+
+	ul {
+		padding: 0rem;
+		@include margin-caps(0.7rem);
+		@include margin-sides(var(--margin__card-sides));
+
+		list-style-position: inside;
+		list-style-type: none;
+
+		color: var(--color__text--content-dark);
+		font-family: var(--font-family__service-card--content);
+		line-height: var(--line-height__content);
+	}
+
+	li + li {
+		margin-top: 1em;
+	}
+}
+
+
+
+/* Placeholders */
+%Card {
+	border-style: solid;
+	border-width: 1px;
+	border-color: var(--color__border);
+	background-color: var(--color__main-background);
+}
+
+%Button {
+	background: var(--color__button--background);
+	border-color: var(--color__button--border);
+	color: var(--color__button--text);
+
+	border-radius: 10px;
+	border-style: solid;
+	border-width: 1.5px;
+	box-shadow: 0.1em 0.2em 0.3em 0.1em #ddd; 
+
+	font-family: var(--font-family__button);
+	font-size: 1.5rem;
+
+	@include margin-sides(1.5rem);
+	@include margin-caps(0.5rem);
+	padding: 0.1em;
+
+	width: 85%;
+	max-width: 25rem;
+}
+
+%ImageContainer {
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 8rem;
+	margin: 0px;
+}
+
+
+%Standalone {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	@include padding-sides(1rem);
+
+	h2 {
+		margin-bottom: 0px;
+
+		color: var(--color__text--heading-dark);
+		text-align: center;
+		font-family: var(--font-family__standalone--heading);
+		font-size: 2rem;
+	}
+
+	p {
+		max-width: 30rem;
+		margin-top: 0.5rem;
+		margin-bottom: 1rem;
+		line-height: var(--line-height__content);
+		font-family: var(--font-family__standalone--content);
+		color: var(--color__text--content-dark);
+	}
+}
+
+
+
+/* Main styles */
+body {
+	margin: 0px;
+}
+
+
+#hero {
+	display: flex;
+	height: 100vh;
+	box-sizing: border-box;
+	flex-direction: column;
+	justify-content: flex-end;
+	@include padding-sides(10vh);
+	padding-bottom: 10vh;
+	overflow: hidden;
+	position: relative;
+
+
+	&::after {
+		content: ' ';
+		position: fixed; // instead of background-attachment
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: var(--img__hero);
+		background-size: cover;
+		background-color: #bbb;
+		background-blend-mode: multiply;
+		will-change: transform; // creates a new paint layer
+		z-index: -1;
+		overflow: hidden;
+	}
+
+	h1 {
+		margin: 0rem;
+		color: var(--color__text--heading-light);
+		text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.55);
+
+		font-family: var(--font-family__hero--main-heading);
+		font-weight: 900;
+		font-size: 4.5rem;
+		text-align: left;
+		line-height: 4rem; 
+		max-width: 24rem;
+	}
+
+	p {
+		margin-top: 0.5rem;
+		color: var(--color__text--content-light);
+		text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.55);
+
+		font-family: var(--font-family__hero--subheading);
+		font-size: 1.1rem;
+		text-align: left;
+		max-width: 28rem;
+	}
+} /* hero */
+
+	#hero__nav-div {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		font-family: var(--font-family__hero--navbar);
+
+
+		a {
+			color: var(--color__text--content-light);
+			text-decoration: none;
+			text-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+		}
+
+		li {
+			margin-left: 3vw;
+			list-style-type: none;
+		}
+
+	}
+		#hero__navbar {
+			display: flex;
+			flex-direction: row;
+			overflow: hidden;
+			height: 15%;
+			width: 100vw;
+			flex-wrap: nowrap;
+			justify-content: flex-start;
+			padding-top: 2vh;
+		}
+		
+		#hero__nav-div--btn {
+			display: none;
+		}
+			#hero__nav-div--btn--icon {
+			}
+
+
+#main-content {
+	background-color: var(--color__main-background);
+	padding-top: 2rem;
+}
+
+#about-me {
+	margin: var(--margin__main-content);
+	display: grid;
+	grid-template-columns: 7fr 6fr;
+	grid-template-areas:
+		"h im"
+		"p im"
+		"p im";
+	@include SectionCard(var(--img__about-me));
+}
+
+
+#another-card {
+	margin: var(--margin__main-content);
+	display: grid;
+	grid-template-columns: 4fr 5fr;
+	grid-template-areas:
+		"im h"
+		"im p"
+		"im p";
+	@include SectionCard(var(--img__another-card));
+}
+
+
+#services {
+	margin: var(--margin__main-content);
+
+	h2 {
+		margin-bottom: 1.7rem;
+		color: var(--color__text--heading-dark);
+		font-family: var(--font-family__standalone--heading);
+		font-size: 4rem;
+		text-align: center;
+		text-shadow: 1px 1px 0.2px rgba(0,0,0,0.3);
+	}
+}
+
+	#services__cards {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 0.5rem;
+		filter: drop-shadow(0.1rem 0.2rem 1rem rgba(0,0,0,0.1));
+	}
+
+	#services__foundation {
+		@include ServiceCard(var(--img__foundation));
+	}
+
+	#services__comprehensive {
+		@include ServiceCard(var(--img__comprehensive));
+	}
+
+	#services__portfolio {
+		@include ServiceCard(var(--img__portfolio));
+	}
+
+	#services__something-else {
+		@include ServiceCard(var(--img__something-else));
+	}
+
+
+
+#contact {
+	@extend %Standalone;
+
+	height: 70vh;
+	padding-bottom: var(--margin__main-content);
+	@include margin-sides(var(--margin__main-content));
+
+}
+	#contact__btn-email {
+		@extend %Button;
+	}
+
+	#contact__btn-phone {
+		@extend %Button;
+	}
+
+
+
+#footer {
+	background: #333;
+	outline-style: solid;
+	outline-width: 2px;
+	outline-color: #535353;
+	outline-offset: 3px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 2.5rem;
+	padding-bottom: 2rem;
+
+	/*
+	&::before {
+		display: block;
+		content: " ";
+		height: 1px;
+		@include border-caps(1px, solid, #aaa);
+		flex: 1;
+	}
+
+	&::after {
+		display: block;
+		content: " ";
+		height: 1px;
+		@include border-caps(1px, solid, #aaa);
+		flex: 1;
+	} */
+}
+	#footer__navbar {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+
+		font-family: var(--font-family__footer--navbar);
+		@include border-sides(2px, solid, #aaa);
+
+		@include padding-sides(0.5rem);
+
+		a {
+			color: #fff;
+
+			&:link {
+				text-decoration: none;
+			}
+		}
+
+		li {
+			list-style-type: none;
+		}
+
+		li + li {
+			margin-left: 1rem;
+		}
+	}
+
