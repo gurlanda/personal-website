@@ -1,0 +1,25 @@
+.eye-animation {  
+    z-index: 2;
+
+    width: 100px;
+    height: 100px;
+  
+    background-image: url('/img/blinking-eye-sprite.png');
+    background-size: 1800%, 100%;
+    background-position: left;
+    background-repeat:no-repeat; 
+  
+    animation-name: eye-fill;
+    animation-duration: 1.3s;
+    animation-timing-function: steps(17);
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes eye-fill {
+    from { 
+      background-position: left; 
+    }
+    to { 
+      background-position: right; 
+    }
+  }

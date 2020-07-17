@@ -1,0 +1,76 @@
+@font-face {
+    font-family: Stardew;
+    src: url(/fonts/sdv.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "Stardew Thin";
+    src: url(/fonts/sdv-thin.ttf) format('truetype');
+}
+
+* { 
+    box-sizing: border-box;
+    letter-spacing: 1.2px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Stardew', sans-serif;
+    font-size: 20px;
+    color: #56160c;
+    text-shadow: 2px 2px 0.5px #e09650;
+}
+
+body {
+    position: relative;
+}
+
+#scene2-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    padding: 1rem;
+
+    background-image: url(/BigImages/woods.png);
+    background-repeat: no-repeat;
+    background-size: auto 150vh;
+
+    animation-name: slow-rise;
+    animation-duration: 60s;
+    animation-fill-mode: both; 
+    animation-timing-function: linear;
+} 
+
+#icon {
+    display: none;
+    position: absolute;
+    bottom: 0px;
+    right: 5px;
+
+    content: "";
+
+    height: 18px;
+    width: 18px;
+    background-image: url(/sprites/dialog-close.png);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 1200%;
+    image-rendering: pixelated;
+
+    animation: sprite .8s steps(11) infinite;
+}
+
+#textContainer {
+    position: relative;
+    top: 50%;
+    z-index: 2;
+}
+
+@keyframes sprite {
+    from {background-position: left;}
+    to {background-position: right;}
+}
+
+@keyframes slow-rise {
+    from {background-position: 100% 100%}
+    to {background-position: 0% 0%;}
+}

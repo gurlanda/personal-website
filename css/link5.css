@@ -1,0 +1,118 @@
+@font-face {
+    font-family: Stardew;
+    src: url(/fonts/sdv.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "Stardew Thin";
+    src: url(/fonts/sdv-thin.ttf) format('truetype');
+}
+
+* { 
+    box-sizing: border-box;
+    letter-spacing: 1.5px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Stardew', sans-serif;
+    font-size: 20px;
+    color: #56160c;
+    text-shadow: 2px 2px 0.5px #e09650;
+}
+
+a {
+    text-decoration: none;
+}
+
+::placeholder {
+    font-family: 'Stardew', sans-serif;
+    font-size: 20px;
+    color: #56160c7a;
+    text-shadow: 2px 2px 0.5px #e096507e;
+    text-align: center;
+}
+
+#scene-container {
+    padding: 1rem;
+    height: 100vh;
+    width: 100vw;
+    background: rgb(10,58,115);
+    background: linear-gradient(rgba(10,58,115,1) 0%, rgba(36,142,249,1) 66%, rgba(116,235,229,1) 100%);
+}
+
+#information {
+    margin: 1rem auto;
+}
+
+#password, #submit {
+    display: inline-block;
+}
+
+.sd-border {
+    border: 12px solid transparent;
+    padding: 8px;
+    border-image-source: url(/img/sd-border.png);
+    border-image-slice: 16 16 16 16;
+    border-image-width: 12px;
+    image-rendering: pixelated;
+}
+
+.sd-small-border {
+    border: 12px solid transparent;
+    padding: 15px;
+    border-image-source: url(/img/sd-small-border.png);
+    border-image-slice: 12;
+    border-image-width: 12px;
+    image-rendering: pixelated;
+}
+
+.note-border {
+    border: 25px solid transparent;
+    border-image-source: url(/img/note-border.png);
+    border-image-slice: 16 16 16 16;
+    border-image-width: 30px;
+    image-rendering: pixelated;
+}
+
+.note-bg {
+    line-height: 1.33rem;
+    background-clip: padding-box;
+    background-color: #ffe8bc;
+    color: #79442d;
+    text-shadow: 2px 2px 0.5px #ddaa68;
+}
+
+.sd-gradient {
+    background-clip: padding-box;
+    background-image: linear-gradient(#fdd182, #ecb16e);
+}
+
+.forward {
+    position: relative;
+}
+
+#cloud1 {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url(/BigImages/cloudLayer.png);
+    background-repeat: no-repeat;
+    background-size: auto 170vh;
+    image-rendering: pixelated;
+
+    animation: drift-left infinite;
+    animation-duration: 40s; 
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+}
+
+@keyframes drift-left {
+    from {background-position: -70% 20%;}
+    to {background-position: 200% 20%;}
+}
+
+/* 
+    Gradient colors:
+    Dark: #ecb16e
+    Light: #fdd182
+*/

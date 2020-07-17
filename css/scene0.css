@@ -1,0 +1,88 @@
+@font-face {
+    font-family: "Stardew Thin";
+    src: url(/fonts/sdv-thin.ttf) format('truetype');
+}
+
+* { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#scene0-container {
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    padding: 13rem 0 0 0;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+
+    background-image: url(/BigImages/backgroundTeal.png);
+    background-repeat: no-repeat;
+    background-size: auto 150vh;
+    background-position: -1100px -10vh;
+    image-rendering: pixelated;
+}
+
+#block {
+    font-family: "Stardew Thin";
+    letter-spacing: 2px;
+    color: rgb(54, 61, 70);
+    text-shadow: none;
+    text-align: center;
+    font-size: 25px;
+    padding: 1rem 1.25rem;
+
+    opacity: 0;
+    transition: opacity 2.5s ease;
+}
+
+#character {
+    opacity: 0;
+    transition: opacity 2.5s ease;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+#happy {
+    position: relative;
+    top: 5px;
+    left: 11px;
+
+    height: 50px;
+    width: 50px;
+    background-image: url(/sprites/happy.png);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 500%;
+
+    animation: dog-wag;
+    animation-duration: .70s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(4);
+}
+
+#dog {
+    height: 100px;
+    width: 100px;
+    background-image: url(/sprites/dog-sitting.png);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 300%;
+
+    animation: dog-wag;
+    animation-duration: .25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(2);
+}
+
+@keyframes dog-wag {
+    from {background-position: left;}
+    to {background-position: right;}
+}

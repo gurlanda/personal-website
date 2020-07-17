@@ -1,0 +1,38 @@
+.sd-border {
+    border: 12px solid transparent;
+    padding: 8px;
+    border-image-source: url(/img/sd-border.png);
+    border-image-slice: 16 16 16 16;
+    border-image-width: 12px;
+    image-rendering: pixelated;
+}
+
+.sd-small-border {
+    border: 12px solid transparent;
+    padding: 15px;
+    border-image-source: url(/img/sd-small-border.png);
+    border-image-slice: 12;
+    border-image-width: 12px;
+    image-rendering: pixelated;
+}
+
+.note-border {
+    border: 25px solid transparent;
+    border-image-source: url(/img/note-border.png);
+    border-image-slice: 16 16 16 16;
+    border-image-width: 30px;
+    image-rendering: pixelated;
+}
+
+.note-bg {
+    line-height: 1.33rem;
+    background-clip: padding-box;
+    background-color: #ffe8bc;
+    color: #79442d;
+    text-shadow: 2px 2px 0.5px #ddaa68;
+}
+
+.sd-gradient {
+    background-clip: padding-box;
+    background-image: linear-gradient(#fdd182, #ecb16e);
+}
