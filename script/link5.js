@@ -11,8 +11,9 @@ btnSubmit.addEventListener("click",
         var passwordText = inputPassword.value;
         
         if (passwordText.length >= requiredLength) {
-            document.getElementById("lastAudio").play();
+            // document.getElementById("lastAudio").play();
             document.getElementById("sound").pause();
+            open("/audio.html", "_blank");
             open("/scene0.html", "_blank");
         }
         else {
