@@ -11,6 +11,24 @@ var dialogClose = new Audio("/audio/dialogueClose.wav")
 var txt = typewriter.innerHTML;
 typewriter.innerHTML = ""; 
 
+setTimeout(
+    function() {
+        document.getElementById("bird-tweet2").play();
+    }, 3000
+);
+
+setTimeout(
+    function() {
+        document.getElementById("bird-tweet1").play();
+    }, 6000
+);
+
+setTimeout(
+    function() {
+        document.getElementById("bird-tweet2").play();
+    }, 8000
+);
+
 function writer() {
     if (i < txt.length) {
         typewriter.innerHTML += txt.charAt(i);

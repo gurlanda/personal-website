@@ -12,6 +12,18 @@ var txt = typewriter.innerHTML;
 typewriter.innerHTML = "";
 document.getElementById("sound").volume = 0.2;
 
+setTimeout(
+    function() {
+        document.getElementById("gull-call").play();
+    }, 1000
+);
+
+setTimeout(
+    function() {
+        document.getElementById("gull-call").play();
+    }, 6000
+);
+
 function writer() {
     if (i < txt.length) {
         typewriter.innerHTML += txt.charAt(i);
