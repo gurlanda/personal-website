@@ -14,7 +14,7 @@ btnSubmit.addEventListener("click",
             // document.getElementById("lastAudio").play();
             document.getElementById("sound").pause();
             open("/audio.html", "_blank");
-            open("/scene0.html", "_blank");
+            // open("/scene0.html", "_blank");
         }
         else {
             inputPassword.value = "";

@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Background music</title>
+    <title>:)</title>
+    <link rel="stylesheet" href="/css/audio.css">
+    <script>
+        function resizeIframe(obj) {
+          obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+        }
+      </script>
 </head>
 <body>
     <audio id="lastAudio" src="/audio/lastAudio.mp3" loop autoplay></audio>
+    <iframe src="scene0.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
 </body>
 </html>
