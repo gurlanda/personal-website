@@ -22,7 +22,9 @@ function writer() {
         dialogClose.play();
         icon.setAttribute("style", "display:block");
         sceneContainer.addEventListener("click",
-            function() { open("/scene2.html", "_self"); } 
+            function() {
+                open("/scene2.html", "_self"); 
+            } 
         );
     } 
 }

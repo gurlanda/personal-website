@@ -41,6 +41,29 @@ body {
     animation-timing-function: linear; 
 } 
 
+#trees {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url(/BigImages/trees.png);
+    background-repeat: no-repeat;
+    background-size: auto 70vh;
+    image-rendering: pixelated;
+
+    animation-name: slow-fall;
+    animation-duration: 10s;
+    animation-fill-mode: both; 
+    animation-timing-function: linear; 
+}
+
+@keyframes slow-fall {
+    from {background-position: 89% 100%;}
+    to {background-position: 89% 200%;}
+}
+
 #textbox {
     position: relative;
     z-index: 2;
@@ -93,9 +116,9 @@ body {
 }
 
 @keyframes drift-left {
-    0% {background-position: -150% 120%;}
-    20% {background-position: -50% 20%;}
-    100% {background-position: 350% 20%;}
+    0% {background-position: 190% 120%;}
+    20% {background-position: 90% 20%;}
+    100% {background-position: -310% 20%;}
 }
 
 @keyframes slow-rise {

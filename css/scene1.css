@@ -80,6 +80,7 @@ body {
 }
 
 #textContainer {
+    transition: opacity 1s ease;
     position: relative;
     z-index: 2;
 }
