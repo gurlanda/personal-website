@@ -9,6 +9,17 @@
     text-shadow: 2px 2px 0.5px #e09650;
 }
 
+#iframeContainer {
+    overflow: hidden;
+    padding-top: 100vh;
+    position: relative;
+}
+
 iframe {
-    width: 100vw;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: 0;
+    left: 0;
+    top: 0;
 }
