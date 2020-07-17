@@ -50,26 +50,20 @@ a {
 .sd-border {
     border: 12px solid transparent;
     padding: 8px;
-    border-image-source: url(/img/sd-border.png);
-    border-image-slice: 16 16 16 16;
-    border-image-width: 12px;
+    border-image: url(/img/sd-border.png) 16 12px;
     image-rendering: pixelated;
 }
 
 .sd-small-border {
     border: 12px solid transparent;
     padding: 15px;
-    border-image-source: url(/img/sd-small-border.png);
-    border-image-slice: 12;
-    border-image-width: 12px;
+    border-image: url(/img/sd-small-border.png) 12 12px;
     image-rendering: pixelated;
 }
 
 .note-border {
     border: 25px solid transparent;
-    border-image-source: url(/img/note-border.png);
-    border-image-slice: 16 16 16 16;
-    border-image-width: 30px;
+    border-image: url(/img/note-border.png) 16 30px;
     image-rendering: pixelated;
 }
 
