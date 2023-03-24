@@ -5,13 +5,5 @@ import layer4 from './layer-4.png';
 import layer5 from './layer-5.png';
 import layer6 from './layer-6.png';
 
-const layers = {
-  layer1,
-  layer2,
-  layer3,
-  layer4,
-  layer5,
-  layer6,
-};
-
+const layers = [layer1, layer2, layer3, layer4, layer5, layer6];
 export default layers;
