@@ -1,4 +1,4 @@
-import layer1 from './layer-1.png';
+// import layer1 from './layer-1.png';
 import layer2 from './layer-2.png';
 import layer3 from './layer-3.png';
 import layer4 from './layer-4.png';

@@ -1,4 +1,4 @@
-import Home from './pages/Home/Home';
+// import Home from './pages/Home/Home';
 import Sidescroll from './pages/Sidescroll/Sidescroll';
 import './index.css';
 

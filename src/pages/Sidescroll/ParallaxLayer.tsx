@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 function parallaxLayerStyle(layerNumber: number): React.CSSProperties {
   const translateZ = `translateZ(${layerNumber}px)`;
@@ -14,10 +14,11 @@ function parallaxLayerStyle(layerNumber: number): React.CSSProperties {
   };
 }
 
-const ParallaxLayer: React.FC<{ imageUrl: string; layerNumber: number }> = ({
-  imageUrl,
-  layerNumber,
-}) => {
+const ParallaxLayer: React.FC<{
+  imageUrl: string;
+  layerNumber: number;
+  children?: ReactNode;
+}> = ({ imageUrl, layerNumber, children }) => {
   return (
     <div
       className="h-[100vh] w-full bg-contain bg-repeat-x"
@@ -25,7 +26,9 @@ const ParallaxLayer: React.FC<{ imageUrl: string; layerNumber: number }> = ({
         ...parallaxLayerStyle(layerNumber),
         backgroundImage: `url('${imageUrl}')`,
       }}
-    ></div>
+    >
+      {children}
+    </div>
   );
 };
 

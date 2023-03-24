@@ -23,7 +23,7 @@ const ParallaxContainer: React.FC<{ children?: ReactNode }> = ({
       'wheel',
       horizontalScrollOnWheelEvent
     );
-  }, [containerRef.current]);
+  }, []);
 
   return (
     <div
