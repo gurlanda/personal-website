@@ -2,22 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.parallax {
+.parallax-container {
   perspective: 1px;
   width: 100vw;
   height: 100vh;
   overflow-x: auto;
-  overflow-y: auto;
-}
-.parallax__layer {
-  position: absolute;
-}
-.parallax__layer--base {
-  transform: translateZ(0);
-}
-.parallax__layer--midground {
-  transform: translateZ(-1px) scale(2);
-}
-.parallax__layer--back {
-  transform: translateZ(-2px) scale(3);
+  overflow-y: hidden;
 }
