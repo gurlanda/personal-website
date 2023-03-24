@@ -9,3 +9,11 @@
   overflow-x: auto;
   overflow-y: hidden;
 }
+
+.parallax-group {
+  height: 100vh;
+  width: 500vw;
+  position: relative;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}

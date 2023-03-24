@@ -3,7 +3,10 @@ import forestLayers from '../assets/img/backgrounds/forest/ForestLayers';
 
 function parallaxLayerStyle(layerNumber: number): React.CSSProperties {
   const translateZ = `translateZ(${layerNumber}px)`;
-  const scale = layerNumber !== 0 ? `scale(${layerNumber * -1 + 1})` : '';
+  const scale =
+    layerNumber === 0 || layerNumber === 1
+      ? ''
+      : `scale(${layerNumber * -1 + 1})`;
 
   return {
     position: 'absolute',
@@ -20,7 +23,7 @@ const Sidescroll: React.FC<{}> = () => {
       return;
     }
 
-    const scrollSpeed = 1.05;
+    const scrollSpeed = 0.75;
     imgContainerRef.current.scrollLeft += event.deltaY * scrollSpeed;
   }
 
@@ -36,44 +39,62 @@ const Sidescroll: React.FC<{}> = () => {
   }, [imgContainerRef.current]);
 
   return (
-    <div className="parallax-container " ref={imgContainerRef}>
-      <div
-        className="h-[108px] w-[200vw] bottom-0"
-        style={parallaxLayerStyle(0)}
-      >
-        <img
-          src={forestLayers.layer2}
-          alt=""
-          className=" object-cover h-[108px] bottom-0"
-        />
-      </div>
-
-      <div
-        className="h-[100vh] w-[200vw] bottom-0"
-        style={parallaxLayerStyle(-1)}
-      >
-        <img src={forestLayers.layer3} alt="" className=" object-cover" />
-      </div>
-
-      <div
-        className="h-[100vh] w-[200vw] bottom-0"
-        style={parallaxLayerStyle(-2)}
-      >
-        <img src={forestLayers.layer4} alt="" className=" object-cover" />
-      </div>
-
-      <div
-        className="h-[100vh] w-[200vw] bottom-0"
-        style={parallaxLayerStyle(-3)}
-      >
-        <img src={forestLayers.layer5} alt="" className=" object-cover" />
-      </div>
-
-      <div
-        className="h-[100vh] w-[200vw] bottom-0"
-        style={parallaxLayerStyle(-4)}
-      >
-        <img src={forestLayers.layer6} alt="" className=" object-cover" />
+    <div className="parallax-container" ref={imgContainerRef}>
+      <div className="parallax-group">
+        <div
+          className="h-[100vh] w-full"
+          style={{
+            ...parallaxLayerStyle(0),
+            backgroundImage: `url('${forestLayers.layer1}')`,
+            backgroundSize: 'contain',
+            backgroundRepeat: 'repeat-x',
+          }}
+        ></div>
+        <div
+          className="h-[100vh] w-full"
+          style={{
+            ...parallaxLayerStyle(-1),
+            backgroundImage: `url('${forestLayers.layer2}')`,
+            backgroundSize: 'contain',
+            backgroundRepeat: 'repeat-x',
+          }}
+        ></div>
+        <div
+          className="h-[100vh] w-full"
+          style={{
+            ...parallaxLayerStyle(-2),
+            backgroundImage: `url('${forestLayers.layer3}')`,
+            backgroundSize: 'contain',
+            backgroundRepeat: 'repeat-x',
+          }}
+        ></div>
+        <div
+          className="h-[100vh] w-full"
+          style={{
+            ...parallaxLayerStyle(-3),
+            backgroundImage: `url('${forestLayers.layer4}')`,
+            backgroundSize: 'contain',
+            backgroundRepeat: 'repeat-x',
+          }}
+        ></div>
+        <div
+          className="h-[100vh] w-full"
+          style={{
+            ...parallaxLayerStyle(-4),
+            backgroundImage: `url('${forestLayers.layer5}')`,
+            backgroundSize: 'contain',
+            backgroundRepeat: 'repeat-x',
+          }}
+        ></div>
+        <div
+          className="h-[100vh] w-full"
+          style={{
+            ...parallaxLayerStyle(-5),
+            backgroundImage: `url('${forestLayers.layer6}')`,
+            backgroundSize: 'contain',
+            backgroundRepeat: 'repeat-x',
+          }}
+        ></div>
       </div>
     </div>
   );
