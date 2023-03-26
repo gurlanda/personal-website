@@ -1,11 +1,17 @@
 import React, { ReactNode } from 'react';
+import perspectiveFactorPixels from './perspectiveFactorPixels';
+
+function scaleFactor(layerNumber: number): number {
+  if (layerNumber === 1) {
+    return 1;
+  }
+
+  return (perspectiveFactorPixels - layerNumber) / perspectiveFactorPixels;
+}
 
 function parallaxLayerStyle(layerNumber: number): React.CSSProperties {
   const translateZ = `translateZ(${layerNumber}px)`;
-  const scale =
-    layerNumber === 0 || layerNumber === 1
-      ? ''
-      : `scale(${layerNumber * -1 + 1})`;
+  const scale = `scale(${scaleFactor(layerNumber)})`;
 
   return {
     position: 'absolute',

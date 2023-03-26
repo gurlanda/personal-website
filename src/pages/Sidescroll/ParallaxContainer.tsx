@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, ReactNode } from 'react';
+import perspectiveFactorPixels from './perspectiveFactorPixels';
 
 const ParallaxContainer: React.FC<{ children?: ReactNode }> = ({
   children,
@@ -27,8 +28,11 @@ const ParallaxContainer: React.FC<{ children?: ReactNode }> = ({
 
   return (
     <div
-      className=" [perspective:1px] flex flex-wrap flex-col w-screen h-screen overflow-x-auto overflow-y-hidden"
+      className=" flex flex-wrap flex-col w-screen h-screen overflow-x-auto overflow-y-hidden"
       ref={containerRef}
+      style={{
+        perspective: perspectiveFactorPixels,
+      }}
     >
       {children}
     </div>
