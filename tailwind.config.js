@@ -68,6 +68,10 @@ module.exports = {
         'screen-7/8': 'calc((100vw / 8) * 7)',
       }),
     },
+    fontFamily: {
+      'signika-negative': ['"Signika Negative"', 'sans-serif'],
+      roboto: ['"Roboto"', 'sans-serif'],
+    },
   },
   plugins: [],
 };

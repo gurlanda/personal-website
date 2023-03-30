@@ -11,12 +11,12 @@ const Home: React.FC<{}> = () => {
   return (
     <>
       <Hero />
-      <Tagline />
+      {/* <Tagline />
       <Proficiencies />
       <Projects />
       <About />
       <Contact />
-      <Footer />
+      <Footer /> */}
     </>
   );
 };
