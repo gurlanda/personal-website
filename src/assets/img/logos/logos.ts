@@ -14,7 +14,7 @@ import sass from './sass-logo.svg';
 import tailwindcss from './tailwindcss-logo.svg';
 import typescript from './typescript-logo.svg';
 
-const logos = [
+export const asArray = [
   bulma,
   css3,
   expressjs,
@@ -32,4 +32,20 @@ const logos = [
   typescript,
 ];
 
-export default logos;
+export const asObject = {
+  bulma,
+  css3,
+  expressjs,
+  git,
+  github,
+  html5,
+  js,
+  mongodb,
+  nodejs,
+  npmjs,
+  python,
+  reactjs,
+  sass,
+  tailwindcss,
+  typescript,
+};
