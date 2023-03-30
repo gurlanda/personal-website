@@ -14,9 +14,13 @@ function cssPropertiesObjectToCssRule(properties: Properties): string {
     return input.replace(/A-Z/g, (match: string) => `-${match.toLowerCase()}`);
   }
 
+  function unpackPossibleString(value: any): string {
+    return value.toString().replace("'", '');
+  }
+
   return Object.keys(properties).reduce((accumulator, key) => {
     const cssKey = camelCaseToKebabCase(key);
-    const cssValue = (properties as any)[key].toString().replace("'", '');
+    const cssValue = unpackPossibleString((properties as any)[key]);
     return `${accumulator}${cssKey}:${cssValue};`;
   }, '');
 }
