@@ -1,6 +1,6 @@
 import React from 'react';
-import Colors from '../../utils/Colors';
-import Keyframe from '../../utils/Keyframe';
+import Colors from '../../../utils/Colors';
+import Keyframe from '../../../utils/Keyframe';
 
 const sunColor = Colors.yellow[100];
 const unitAngleDegrees = 3;
