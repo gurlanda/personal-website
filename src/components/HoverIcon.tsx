@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import Keyframe from './Keyframe';
+import Keyframe from '../utils/Keyframe';
 
 function randomDuration(): number {
   return Math.random() * 500 + 1400;

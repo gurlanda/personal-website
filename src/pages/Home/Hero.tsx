@@ -1,24 +1,44 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import Sun from './Sun';
 
 const Hero: React.FC<{}> = () => {
+  const headerRef = useRef<HTMLElement>(null);
+  const [componentWidth, setComponentWidth] = useState<number>(0);
+  const [componentHeight, setComponentHeight] = useState<number>(0);
+
+  useEffect(() => {
+    if (!headerRef.current) {
+      return;
+    }
+
+    setComponentWidth(headerRef.current.offsetWidth);
+    setComponentHeight(headerRef.current.offsetHeight);
+  }, []);
+
   return (
-    <header className=" w-screen h-screen bg-yellow-50">
-      <nav className="hidden">
-        <a href="#proficiencies">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-      </nav>
+    <header
+      className=" relative w-screen h-screen bg-yellow-50 text-orange-900 overflow-hidden font-roboto"
+      ref={headerRef}
+    >
+      <div className="absolute top-0 left-0 w-full flex justify-end z-20 px-24 py-10">
+        <nav className=" flex justify-between gap-20 text-2xl font-thin">
+          <a href="#proficiencies">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
+        </nav>
+      </div>
 
       {/* Text */}
-      <div className="flex flex-col justify-center h-full mx-[15vw] font-signika-negative text-slate-900">
-        <h1 className="  leading-none font-semibold text-[10rem] text-slate-800 ">
+      <div className="absolute flex flex-col justify-center h-full mx-[10vw]   z-20">
+        <h1 className=" font-signika-negative leading-none font-semibold text-[10rem]  ">
           Gam Urlanda
         </h1>
-        <h2 className=" font-roboto font-thin text-5xl pl-2">
-          Front-end developer
-        </h2>
+        <h2 className="  font-thin text-5xl pl-2">Front-end developer</h2>
       </div>
+
+      {/* Sun */}
+      <Sun top={componentHeight * 0.5} left={componentWidth * (2 / 7)} />
     </header>
   );
 };
