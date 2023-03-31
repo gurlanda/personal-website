@@ -1,18 +1,18 @@
-import bulma from './bulma-logo';
-import css3 from './css3-logo';
-import expressjs from './expressjs-logo';
-import git from './git-logo';
-import github from './github-logo';
-import html5 from './html5-logo';
-import js from './js-logo';
-import mongodb from './mongodb-logo';
-import nodejs from './nodejs-logo';
-import npmjs from './npmjs-logo';
-import python from './python-logo';
-import reactjs from './reactjs-logo';
-import sass from './sass-logo';
-import tailwindcss from './tailwindcss-logo';
-import typescript from './typescript-logo';
+import bulma from './bulmaLogo';
+import css3 from './css3Logo';
+import expressjs from './expressjsLogo';
+import git from './gitLogo';
+import github from './githubLogo';
+import html5 from './html5Logo';
+import js from './jsLogo';
+import mongodb from './mongodbLogo';
+import nodejs from './nodejsLogo';
+import npmjs from './npmjsLogo';
+import python from './pythonLogo';
+import reactjs from './reactjsLogo';
+import sass from './sassLogo';
+import tailwindcss from './tailwindcssLogo';
+import typescript from './typescriptLogo';
 
 export const asArray = [
   bulma,

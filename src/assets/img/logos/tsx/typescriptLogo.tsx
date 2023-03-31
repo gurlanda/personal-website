@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TypescriptLogo() {
+function Icon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">
       <path
@@ -11,4 +11,4 @@ function TypescriptLogo() {
   );
 }
 
-export default TypescriptLogo;
+export default { icon: Icon, text: 'TypeScript' };

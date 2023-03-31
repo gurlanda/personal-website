@@ -13,8 +13,8 @@ const HoverIconExperiment: React.FC<{}> = () => {
       <div className="grid grid-cols-4 gap-10">
         {TsxLogos.asArray.map((ImgComponent) => (
           <HoverIcon>
-            <ImgComponent />
-            <h2 className="text-center">Wowee</h2>
+            <ImgComponent.icon />
+            <h2 className="text-center">{ImgComponent.text}</h2>
           </HoverIcon>
         ))}
       </div>

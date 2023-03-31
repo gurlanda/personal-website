@@ -15,7 +15,7 @@ const HoverIcon: React.FC<{ children: ReactNode }> = ({ children }) => {
         animationDirection: 'alternate',
         animationIterationCount: 'infinite',
       }}
-      className="hover:-translate-y-7 transition-all hover:[animation-play-state:paused]"
+      className="hover:-translate-y-7 transition-all hover:[animation-play-state:paused] flex flex-col items-center gap-2"
     >
       <Keyframe
         name="float"

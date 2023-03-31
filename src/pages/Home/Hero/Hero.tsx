@@ -17,7 +17,7 @@ const Hero: React.FC<{}> = () => {
 
   return (
     <header
-      className=" relative w-screen h-screen bg-yellow-50 text-orange-900 overflow-hidden font-roboto"
+      className=" relative w-screen h-screen bg-yellow-50 text-orange-900 overflow-hidden"
       ref={headerRef}
     >
       <div className="absolute top-0 left-0 w-full flex justify-end z-20 px-24 py-10">

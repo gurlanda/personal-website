@@ -25,4 +25,4 @@ function Icon() {
   );
 }
 
-export default Icon;
+export default { icon: Icon, text: 'Pure HTML' };

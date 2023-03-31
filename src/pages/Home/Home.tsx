@@ -9,15 +9,15 @@ import Footer from './Footer';
 
 const Home: React.FC<{}> = () => {
   return (
-    <>
+    <div className="h-full font-roboto">
       <Hero />
-      {/* <Tagline />
       <Proficiencies />
+      {/* <Tagline />
       <Projects />
       <About />
       <Contact />
       <Footer /> */}
-    </>
+    </div>
   );
 };
 
