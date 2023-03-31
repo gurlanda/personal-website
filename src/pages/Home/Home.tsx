@@ -6,12 +6,14 @@ import Projects from './Projects';
 import About from './About';
 import Contact from './Contact';
 import Footer from './Footer';
+import BGHoverIconExperiment from '../../components/BGHoverIconExperiment';
 
 const Home: React.FC<{}> = () => {
   return (
-    <div className="h-full font-roboto">
+    <div className="flex flex-col justify-center items-center h-full font-roboto">
       <Hero />
       <Proficiencies />
+      <BGHoverIconExperiment />
       {/* <Tagline />
       <Projects />
       <About />

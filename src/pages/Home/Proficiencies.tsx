@@ -1,5 +1,5 @@
 import React from 'react';
-import HoverIcon from '../../components/HoverIcon';
+import HoverEffect from '../../components/HoverEffect';
 import * as TsxLogos from '../../assets/img/logos/tsx/tsxLogos';
 
 const Proficiencies: React.FC<{}> = () => {
@@ -24,7 +24,7 @@ const Proficiencies: React.FC<{}> = () => {
   return (
     <section
       id="proficiencies"
-      className="h-screen w-screen flex justify-center text-slate-800"
+      className="h-full w-full flex justify-center text-slate-800"
     >
       <div className="flex flex-col gap-24 pt-28 pb-36 px-40 font-thin text-2xl">
         <section className="flex flex-col gap-3">
@@ -42,20 +42,20 @@ const Proficiencies: React.FC<{}> = () => {
             apps...
           </p>
           <div className="flex justify-center items-center gap-6">
-            <HoverIcon>
+            <HoverEffect>
               <TsxLogos.asObject.reactjs.icon />
               <p>{TsxLogos.asObject.reactjs.text}</p>
-            </HoverIcon>
+            </HoverEffect>
             <span className="fa-solid fa-plus text-4xl"></span>
-            <HoverIcon>
+            <HoverEffect>
               <TsxLogos.asObject.typescript.icon />
               <p>{TsxLogos.asObject.typescript.text}</p>
-            </HoverIcon>
+            </HoverEffect>
             <span className="fa-solid fa-plus text-4xl"></span>
-            <HoverIcon>
+            <HoverEffect>
               <TsxLogos.asObject.tailwindcss.icon />
               <p>{TsxLogos.asObject.tailwindcss.text}</p>
-            </HoverIcon>
+            </HoverEffect>
           </div>
         </section>
 
@@ -63,10 +63,10 @@ const Proficiencies: React.FC<{}> = () => {
           <p>...But I'm also confident with these technologies.</p>
           <div className="grid grid-cols-4 justify-center gap-10">
             {otherProficiencies.map((Logo, index) => (
-              <HoverIcon key={index}>
+              <HoverEffect key={index}>
                 <Logo.icon />
                 <p>{Logo.text}</p>
-              </HoverIcon>
+              </HoverEffect>
             ))}
           </div>
         </section>
@@ -75,10 +75,10 @@ const Proficiencies: React.FC<{}> = () => {
           <p>I'm also proficient with the following dev tools.</p>
           <div className="grid grid-cols-3 justify-center gap-10">
             {devProficiencies.map((Logo, index) => (
-              <HoverIcon key={index}>
+              <HoverEffect key={index}>
                 <Logo.icon />
                 <p>{Logo.text}</p>
-              </HoverIcon>
+              </HoverEffect>
             ))}
           </div>
         </section>

@@ -71,7 +71,7 @@ const Sun: React.FC<{ top: number; left: number }> = ({ top, left }) => {
       className="absolute z-10"
       style={{
         animationName: 'rotate',
-        animationDuration: `100s`,
+        animationDuration: `85s`,
         animationTimingFunction: 'linear',
         animationIterationCount: 'infinite',
         transformOrigin: 'center',

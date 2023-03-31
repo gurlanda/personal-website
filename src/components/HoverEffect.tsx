@@ -5,7 +5,7 @@ function randomDuration(): number {
   return Math.random() * 500 + 1400;
 }
 
-const HoverIcon: React.FC<{ children: ReactNode }> = ({ children }) => {
+const HoverEffect: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <div
       style={{
@@ -30,4 +30,4 @@ const HoverIcon: React.FC<{ children: ReactNode }> = ({ children }) => {
   );
 };
 
-export default HoverIcon;
+export default HoverEffect;
