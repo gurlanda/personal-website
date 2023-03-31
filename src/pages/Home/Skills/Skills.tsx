@@ -1,8 +1,10 @@
 import React from 'react';
-import HoverEffect from '../../components/HoverEffect';
-import * as TsxLogos from '../../assets/img/logos/tsx/tsxLogos';
+import HoverEffect from '../../../components/HoverEffect';
+import * as TsxLogos from '../../../assets/img/logos/tsx/tsxLogos';
+import IconBackground from '../../../components/IconBackground';
+import SkillsBackgroundIcon from './SkillsBackgroundIcon';
 
-const Proficiencies: React.FC<{}> = () => {
+const Skills: React.FC<{}> = () => {
   const tsxLogosObject = TsxLogos.asObject;
 
   const otherProficiencies = [
@@ -24,9 +26,9 @@ const Proficiencies: React.FC<{}> = () => {
   return (
     <section
       id="proficiencies"
-      className="h-full w-full flex justify-center text-slate-800"
+      className="h-full w-full relative flex justify-center text-slate-800"
     >
-      <div className="flex flex-col gap-24 pt-28 pb-36 px-40 font-thin text-2xl">
+      <div className="flex flex-col gap-24 pt-48 pb-48 px-40 font-thin text-2xl">
         <section className="flex flex-col gap-3">
           <h2 className="font-normal text-6xl">My Skills</h2>
           <p>
@@ -83,8 +85,11 @@ const Proficiencies: React.FC<{}> = () => {
           </div>
         </section>
       </div>
+      <IconBackground>
+        <SkillsBackgroundIcon />
+      </IconBackground>
     </section>
   );
 };
 
-export default Proficiencies;
+export default Skills;
