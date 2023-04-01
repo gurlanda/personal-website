@@ -59,7 +59,7 @@ const IconBackground: React.FC<{ children: React.ReactNode }> = ({
 
       const percentageOfMaxDistance = distanceFromOrigin / maxDistance;
       const minSizePx = 15;
-      const maxSizePx = 120;
+      const maxSizePx = 100;
 
       return (
         (maxSizePx - minSizePx) * Math.pow(percentageOfMaxDistance, 2.5) +
@@ -116,10 +116,10 @@ const IconBackground: React.FC<{ children: React.ReactNode }> = ({
 
   return (
     <div
-      className="w-full h-full absolute top-0 left-0 -z-20"
+      className="w-full h-full absolute top-0 left-0 z-20"
       ref={containerRef}
     >
-      {iconGrid(250, containerWidth, containerHeight)}
+      {iconGrid(400, containerWidth, containerHeight)}
     </div>
   );
 };

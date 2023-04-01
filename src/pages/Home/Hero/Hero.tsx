@@ -17,10 +17,10 @@ const Hero: React.FC<{}> = () => {
 
   return (
     <header
-      className=" relative w-screen h-screen bg-yellow-50 text-orange-900 overflow-hidden"
+      className=" relative w-screen h-screen  text-orange-900 overflow-x-clip"
       ref={headerRef}
     >
-      <div className="relative w-full flex justify-end z-20 px-24 py-10">
+      <div className="relative w-full flex justify-end z-50 px-24 py-10">
         <nav className=" flex justify-between gap-20 text-2xl font-thin">
           <a href="#proficiencies">Skills</a>
           <a href="#projects">Projects</a>
@@ -30,7 +30,7 @@ const Hero: React.FC<{}> = () => {
       </div>
 
       {/* Text */}
-      <div className="absolute flex flex-col justify-center h-full mx-[10vw]   z-20">
+      <div className="absolute flex flex-col justify-center h-full mx-[10vw]   z-50">
         <h1 className=" font-signika-negative leading-none font-semibold text-[10rem]  ">
           Gam Urlanda
         </h1>

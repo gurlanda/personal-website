@@ -7,6 +7,12 @@ import SkillsBackgroundIcon from './SkillsBackgroundIcon';
 const Skills: React.FC<{}> = () => {
   const tsxLogosObject = TsxLogos.asObject;
 
+  const favoriteTechnologies = [
+    tsxLogosObject.reactjs,
+    tsxLogosObject.typescript,
+    tsxLogosObject.tailwindcss,
+  ];
+
   const otherProficiencies = [
     tsxLogosObject.html5,
     tsxLogosObject.css3,
@@ -24,11 +30,11 @@ const Skills: React.FC<{}> = () => {
   ];
 
   return (
-    <section
-      id="proficiencies"
-      className="h-full w-full relative flex justify-center text-slate-800"
-    >
-      <div className="flex flex-col gap-24 pt-48 pb-48 px-40 font-thin text-2xl">
+    <section className="h-full w-full relative flex justify-center text-slate-800">
+      <div
+        id="proficiencies"
+        className="relative flex flex-col gap-24 pt-48 pb-48 px-40 font-thin text-2xl z-50"
+      >
         <section className="flex flex-col gap-3">
           <h2 className="font-normal text-6xl">My Skills</h2>
           <p>
@@ -43,27 +49,19 @@ const Skills: React.FC<{}> = () => {
             These are my <strong>favorite technologies</strong> for building web
             apps...
           </p>
-          <div className="flex justify-center items-center gap-6">
-            <HoverEffect>
-              <TsxLogos.asObject.reactjs.icon />
-              <p>{TsxLogos.asObject.reactjs.text}</p>
-            </HoverEffect>
-            <span className="fa-solid fa-plus text-4xl"></span>
-            <HoverEffect>
-              <TsxLogos.asObject.typescript.icon />
-              <p>{TsxLogos.asObject.typescript.text}</p>
-            </HoverEffect>
-            <span className="fa-solid fa-plus text-4xl"></span>
-            <HoverEffect>
-              <TsxLogos.asObject.tailwindcss.icon />
-              <p>{TsxLogos.asObject.tailwindcss.text}</p>
-            </HoverEffect>
+          <div className="grid grid-cols-3 gap-10">
+            {favoriteTechnologies.map((Logo, index) => (
+              <HoverEffect key={index}>
+                <Logo.icon />
+                <p>{Logo.text}</p>
+              </HoverEffect>
+            ))}
           </div>
         </section>
 
         <section className="flex flex-col gap-6">
           <p>...But I'm also confident with these technologies.</p>
-          <div className="grid grid-cols-4 justify-center gap-10">
+          <div className="grid grid-cols-4 gap-10">
             {otherProficiencies.map((Logo, index) => (
               <HoverEffect key={index}>
                 <Logo.icon />
@@ -75,7 +73,7 @@ const Skills: React.FC<{}> = () => {
 
         <section className="flex flex-col gap-6">
           <p>I'm also proficient with the following dev tools.</p>
-          <div className="grid grid-cols-3 justify-center gap-10">
+          <div className="grid grid-cols-3 gap-10">
             {devProficiencies.map((Logo, index) => (
               <HoverEffect key={index}>
                 <Logo.icon />
@@ -85,9 +83,9 @@ const Skills: React.FC<{}> = () => {
           </div>
         </section>
       </div>
-      <IconBackground>
+      {/* <IconBackground>
         <SkillsBackgroundIcon />
-      </IconBackground>
+      </IconBackground> */}
     </section>
   );
 };

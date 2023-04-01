@@ -9,7 +9,7 @@ import Footer from './Footer';
 
 const Home: React.FC<{}> = () => {
   return (
-    <div className="flex flex-col justify-center items-center h-full font-roboto">
+    <div className="flex flex-col justify-center items-center h-full font-roboto overflow-clip bg-yellow-50">
       <Hero />
       <Skills />
       {/* <Tagline />

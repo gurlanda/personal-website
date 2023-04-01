@@ -59,7 +59,7 @@ function rayGroup(radiusPx: number, startingAngleDegrees: number) {
 }
 
 const Sun: React.FC<{ top: number; left: number }> = ({ top, left }) => {
-  const imgSideWidthPx = 4000;
+  const imgSideWidthPx = 10000;
   const halfWidthPx = imgSideWidthPx / 2;
   const mainDiskRadiusPx = 200;
   const center = `${halfWidthPx},${halfWidthPx}`;
