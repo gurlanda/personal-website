@@ -12,11 +12,11 @@ const Home: React.FC<{}> = () => {
     <div className="flex flex-col justify-center items-center h-full font-roboto overflow-clip bg-yellow-50">
       <Hero />
       <Skills />
-      {/* <Tagline />
-      <Projects />
-      <About />
-      <Contact />
-      <Footer /> */}
+      {/* <Tagline /> */}
+      {/* <Projects /> */}
+      {/* <About /> */}
+      {/* <Contact /> */}
+      <Footer />
     </div>
   );
 };
