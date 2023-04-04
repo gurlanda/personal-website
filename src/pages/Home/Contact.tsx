@@ -35,7 +35,7 @@ const Contact: React.FC<{}> = () => {
           id="fs-frm"
           name="simple-contact-form"
           acceptCharset="utf-8"
-          // action="https://formspree.io/f/xoqzdyyg"
+          action="https://formspree.io/f/xgebnqjv"
           method="post"
         >
           <div className="w-full flex justify-start items-center mb-2">
