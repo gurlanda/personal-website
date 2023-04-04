@@ -1,18 +1,21 @@
 import React from 'react';
+import HoverEffect from '../../components/HoverEffect';
 
 const CircleIcon: React.FC<{ iconClassNames: string; href: string }> = ({
   iconClassNames,
   href,
 }) => {
   return (
-    <a
-      href={href}
-      target="_blank"
-      className={`rounded-xl p-5 w-40
+    <HoverEffect>
+      <a
+        href={href}
+        target="_blank"
+        className={`rounded-xl p-5 w-40
         flex justify-center items-center bg-yellow-900 hover:bg-yellow-800 active:bg-yellow-700 text-yellow-50 text-6xl`}
-    >
-      <i className={`${iconClassNames} text-center align-middle `} />
-    </a>
+      >
+        <i className={`${iconClassNames} text-center align-middle `} />
+      </a>
+    </HoverEffect>
   );
 };
 
