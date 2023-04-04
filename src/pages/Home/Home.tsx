@@ -15,7 +15,7 @@ const Home: React.FC<{}> = () => {
       {/* <Tagline /> */}
       {/* <Projects /> */}
       {/* <About /> */}
-      {/* <Contact /> */}
+      <Contact />
       <Footer />
     </div>
   );

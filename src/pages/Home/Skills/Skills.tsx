@@ -1,8 +1,6 @@
 import React from 'react';
 import HoverEffect from '../../../components/HoverEffect';
 import * as TsxLogos from '../../../assets/img/logos/tsx/tsxLogos';
-import IconBackground from '../../../components/IconBackground';
-import SkillsBackgroundIcon from './SkillsBackgroundIcon';
 
 const Skills: React.FC<{}> = () => {
   const tsxLogosObject = TsxLogos.asObject;
@@ -30,8 +28,8 @@ const Skills: React.FC<{}> = () => {
   ];
 
   return (
-    <section className="h-full w-full relative flex justify-center text-slate-800">
-      <div
+    <div className="h-full w-full relative flex justify-center text-yellow-900">
+      <section
         id="proficiencies"
         className="relative flex flex-col gap-24 pt-48 pb-48 px-40 font-thin text-2xl z-50"
       >
@@ -82,11 +80,11 @@ const Skills: React.FC<{}> = () => {
             ))}
           </div>
         </section>
-      </div>
+      </section>
       {/* <IconBackground>
         <SkillsBackgroundIcon />
       </IconBackground> */}
-    </section>
+    </div>
   );
 };
 
