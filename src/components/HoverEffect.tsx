@@ -21,7 +21,7 @@ const HoverEffect: React.FC<{ children: ReactNode }> = ({ children }) => {
         name="float"
         animationProperties={{
           from: { transform: 'translateY(0px)' },
-          to: { transform: 'translateY(-5px)' },
+          to: { transform: 'translateY(-3px)' },
         }}
       />
 
