@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from './Hero/Hero';
 import Tagline from './Tagline';
 import Skills from './Skills/Skills';
-import Projects from './Projects';
+import Projects from './Projects/Projects';
 import About from './About';
 import Contact from './Contact';
 import Footer from './Footer';
@@ -13,7 +13,7 @@ const Home: React.FC<{}> = () => {
       <Hero />
       <Skills />
       {/* <Tagline /> */}
-      {/* <Projects /> */}
+      <Projects />
       {/* <About /> */}
       <Contact />
       <Footer />

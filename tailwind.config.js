@@ -71,6 +71,7 @@ module.exports = {
     fontFamily: {
       'signika-negative': ['"Signika Negative"', 'sans-serif'],
       roboto: ['"Roboto"', 'sans-serif'],
+      'ibm-plex-serif': ['"IBM Plex Serif"', 'serif'],
     },
   },
   plugins: [],

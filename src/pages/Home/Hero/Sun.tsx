@@ -59,7 +59,7 @@ function rayGroup(radiusPx: number, startingAngleDegrees: number) {
 }
 
 const Sun: React.FC<{ top: number; left: number }> = ({ top, left }) => {
-  const imgSideWidthPx = 10000;
+  const imgSideWidthPx = 8000;
   const halfWidthPx = imgSideWidthPx / 2;
   const mainDiskRadiusPx = 200;
   const center = `${halfWidthPx},${halfWidthPx}`;
@@ -71,7 +71,7 @@ const Sun: React.FC<{ top: number; left: number }> = ({ top, left }) => {
       className="absolute z-10"
       style={{
         animationName: 'rotate',
-        animationDuration: `85s`,
+        animationDuration: `100s`,
         animationTimingFunction: 'linear',
         animationIterationCount: 'infinite',
         transformOrigin: 'center',
