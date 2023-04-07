@@ -41,6 +41,7 @@ const Skills: React.FC<{}> = () => {
     tsxLogosObject.sass,
     tsxLogosObject.js,
     tsxLogosObject.nodejs,
+    tsxLogosObject.expressjs,
     tsxLogosObject.mongodb,
     tsxLogosObject.python,
   ];
