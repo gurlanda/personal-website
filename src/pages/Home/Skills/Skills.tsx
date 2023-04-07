@@ -54,8 +54,7 @@ const Skills: React.FC<{}> = () => {
     <div className="h-full w-full relative flex justify-center text-yellow-900 pt-32">
       <section
         id="proficiencies"
-        className="relative px-5 flex flex-col gap-20 font-light text-2xl z-50
-        
+        className="relative w-full max-w-[900px] px-5 flex flex-col gap-20 font-light text-2xl z-50
         xs:px-10"
       >
         <section className="flex flex-col gap-3">

@@ -10,7 +10,7 @@ const PortfolioItemFrame: React.FC<{
       <a
         href={href}
         target="_blank"
-        className="relative block w-full h-[75vh] overflow-hidden rounded-2xl border border-yellow-800 border-opacity-50"
+        className="relative block w-full h-[70vh] overflow-hidden rounded-2xl border z-30 border-yellow-800 border-opacity-50 "
       >
         {children}
       </a>
