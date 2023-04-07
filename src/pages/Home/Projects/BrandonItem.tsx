@@ -33,10 +33,20 @@ const Video: React.FC<{}> = () => {
 
 const Header: React.FC<{}> = () => {
   return (
-    <>
+    <span>
       Porfolio for filmmaker Brandon Victoriano{' '}
       <i className="fa-solid fa-up-right-from-square text-xl align-text-top" />
-    </>
+    </span>
+  );
+};
+
+const Technologies: React.FC<{}> = () => {
+  return (
+    <span>
+      <strong className="font-[500]">Technologies used:</strong> Created with
+      React, TypeScript, TailwindCSS. Hosted using GitHub Pages and Google
+      Domains.
+    </span>
   );
 };
 
@@ -45,6 +55,7 @@ const BrandonItem: React.FC<{}> = () => {
     <PortfolioItemFrame
       href="https://brandonvictoriano.com"
       header={<Header />}
+      technologies={<Technologies />}
     >
       <Video />
     </PortfolioItemFrame>
