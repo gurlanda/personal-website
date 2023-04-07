@@ -1,10 +1,10 @@
-# Gam Urlanda's Portfolio Website
+# Gam's Portfolio Website
 
-Welcome to my personal portfolio website repository! This website showcases my work, skills, and experience as a Front-end Developer. It's designed to provide visitors with a comprehensive understanding of who I am and what I can do.
+Welcome to my portfolio website repository! This website showcases my work, skills, and experience as a Front-end Developer. It's designed to provide visitors with a comprehensive understanding of who I am and what I can do.
 
 ## Getting Started
 
-To access the website, [click here](https://gamurlanda.com). You can view my portfolio, read about my skills and experience, and contact me directly through the website (or contact me here on GitHub directly, whatever works best for you).
+To access the website, [click here](https://gamurlanda.com). You can view my portfolio, read about my skills and experience, and contact me directly through the website.
 
 ## Built With
 
