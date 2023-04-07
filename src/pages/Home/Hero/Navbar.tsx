@@ -36,7 +36,7 @@ const Navbar: React.FC<{}> = () => {
   ml:backdrop-blur-none ml:bg-transparent 
   `}
       >
-        <a href="#proficiencies" onClick={() => setIsVisible(false)}>
+        <a href="#skills" onClick={() => setIsVisible(false)}>
           Skills
         </a>
         <a href="#projects" onClick={() => setIsVisible(false)}>

@@ -55,7 +55,7 @@ const Skills: React.FC<{}> = () => {
   return (
     <SectionContainer>
       <section
-        id="proficiencies"
+        id="skills"
         className="relative w-full max-w-[900px] px-5 flex flex-col gap-20 font-light text-yellow-900 text-2xl
         xs:px-10"
       >

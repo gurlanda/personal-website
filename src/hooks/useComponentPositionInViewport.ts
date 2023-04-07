@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function useComponentPositionInContainer(
+function useComponentPositionInViewport(
   element: React.RefObject<HTMLElement>
 ): [number, number] {
   const [left, setLeft] = useState<number>(0);
@@ -19,4 +19,4 @@ function useComponentPositionInContainer(
   return [left, top];
 }
 
-export default useComponentPositionInContainer;
+export default useComponentPositionInViewport;

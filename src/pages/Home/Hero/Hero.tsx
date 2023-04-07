@@ -1,30 +1,27 @@
-import React, { useRef } from 'react';
-import useComponentDimensions from '../../../hooks/useComponentDimensions';
-import useComponentPositionInContainer from '../../../hooks/useComponentPositionInContainer';
-import Sun from './Sun';
+import React, { useContext, useEffect, useRef } from 'react';
+import SunContext from '../../../context/SunContext';
 import Navbar from './Navbar';
 
 const Hero: React.FC<{}> = () => {
   const headerElementRef = useRef<HTMLElement>(null);
   const nameRef = useRef<HTMLSpanElement>(null);
-  const [nameWidth, nameHeight] = useComponentDimensions(nameRef);
-  const [nameLeft, nameTop] = useComponentPositionInContainer(nameRef);
+  const sunContext = useContext(SunContext);
 
-  function getMiddlePx(offsetPx: number, sizePx: number): number {
-    return offsetPx + sizePx * 0.5;
-  }
+  useEffect(() => {
+    if (!sunContext || !nameRef.current) {
+      return;
+    }
 
-  function getSunTop(): number {
-    return getMiddlePx(nameTop, nameHeight);
-  }
+    const boundingRect = nameRef.current.getBoundingClientRect();
+    const dimensions: [number, number] = [
+      boundingRect.width,
+      boundingRect.height,
+    ];
+    const position: [number, number] = [boundingRect.left, boundingRect.top];
 
-  function getSunLeft(): number {
-    return getMiddlePx(nameLeft, nameWidth);
-  }
-
-  function getSunRadiusPx(): number {
-    return Math.min(nameWidth * 0.43, 250);
-  }
+    sunContext.setTargetDimensions(dimensions);
+    sunContext.setTargetPosition(position);
+  }, []);
 
   return (
     <header
@@ -36,8 +33,8 @@ const Hero: React.FC<{}> = () => {
       {/* Text */}
       <div
         className="relative h-full w-full flex flex-col justify-start gap-4 items-center z-50 pt-[23vh]
-      
-      ml:items-start ml:pt-[30vh] ms:ml-[10vw] lg:pt-[35vh] max-w-[1500px]"
+
+        ml:items-start ml:pt-[30vh] ms:ml-[10vw] lg:pt-[35vh] max-w-[1500px]"
       >
         <h1
           className=" font-signika-negative leading-none font-semibold text-7xl text-center max-w-sm
@@ -55,13 +52,6 @@ const Hero: React.FC<{}> = () => {
           Front-end developer
         </h2>
       </div>
-
-      {/* Sun */}
-      <Sun
-        top={getSunTop()}
-        left={getSunLeft()}
-        sunDiskRadiusPx={getSunRadiusPx()}
-      />
     </header>
   );
 };

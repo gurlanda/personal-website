@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import useFullPageDimensions from '../../../hooks/useFullPageDimensions';
+import SunContext from '../../../context/SunContext';
 import Colors from '../../../utils/Colors';
 import Keyframe from '../../../utils/Keyframe';
 
@@ -59,12 +60,31 @@ function rayGroup(radiusPx: number, startingAngleDegrees: number) {
   );
 }
 
-const Sun: React.FC<{
-  top: number;
-  left: number;
-  sunDiskRadiusPx?: number;
-}> = ({ top, left, sunDiskRadiusPx }) => {
+const Sun: React.FC<{}> = () => {
   const [pageWidth, pageHeight] = useFullPageDimensions();
+  const sunContext = useContext(SunContext);
+  const [top, setTop] = useState<number>(0);
+  const [left, setLeft] = useState<number>(0);
+  const [sunDiskRadiusPx, setSunDiskRadiusPx] = useState<number>(0);
+
+  useEffect(() => {
+    if (!sunContext) {
+      return;
+    }
+
+    const [targetLeft, targetTop] = sunContext.getTargetPosition();
+    const [targetWidth, targetHeight] = sunContext.getTargetDimensions();
+
+    console.dir(sunContext.state);
+
+    function getMiddlePx(offsetPx: number, sizePx: number): number {
+      return offsetPx + sizePx * 0.5;
+    }
+
+    setTop(getMiddlePx(targetTop, targetHeight));
+    setLeft(getMiddlePx(targetLeft, targetWidth));
+    setSunDiskRadiusPx(Math.min(targetWidth * 0.43, 250));
+  }, [sunContext]);
 
   const imgSideWidthPx = pageHeight * 2;
   const halfWidthPx = imgSideWidthPx / 2;
