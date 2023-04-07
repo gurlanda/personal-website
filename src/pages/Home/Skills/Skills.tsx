@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionContainer from '../../../components/SectionContainer';
 import HoverEffect from '../../../components/HoverEffect';
 import * as TsxLogos from '../../../assets/img/logos/tsx/tsxLogos';
 
@@ -51,10 +52,10 @@ const Skills: React.FC<{}> = () => {
   ];
 
   return (
-    <div className="h-full w-full relative flex justify-center text-yellow-900 pt-32">
+    <SectionContainer>
       <section
         id="proficiencies"
-        className="relative w-full max-w-[900px] px-5 flex flex-col gap-20 font-light text-2xl z-50
+        className="relative w-full max-w-[900px] px-5 flex flex-col gap-20 font-light text-yellow-900 text-2xl
         xs:px-10"
       >
         <section className="flex flex-col gap-3">
@@ -81,7 +82,7 @@ const Skills: React.FC<{}> = () => {
           <>I'm also proficient with the following dev tools.</>
         </SkillsGroup>
       </section>
-    </div>
+    </SectionContainer>
   );
 };
 
