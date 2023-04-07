@@ -14,7 +14,7 @@ const ContactForm: React.FC<{}> = () => {
       action="https://formspree.io/f/xgebnqjv"
       method="post"
     >
-      <div className="w-full flex flex-col items-start justify-center gap-2 mb-2">
+      <div className="w-full flex flex-col items-start justify-center gap-5 ms:gap-2 mb-2">
         <h2 className="font-normal text-5xl 2xs:text-[3.5rem] xs:text-6xl">
           Let's work together!
         </h2>

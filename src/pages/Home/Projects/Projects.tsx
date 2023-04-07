@@ -17,8 +17,8 @@ const Projects: React.FC<{}> = () => {
         </div>
         <div className="flex flex-col gap-20">
           <BrandonItem />
-          <div className="flex flex-col gap-3">
-            <h3 className="text-5xl font-[500]">This Website</h3>
+          <div className="flex flex-col gap-8">
+            <h3 className="text-[2.5rem] leading-4 font-[500]">This Website</h3>
             <p className="text-2xl font-light">
               <strong className="font-[500]">Technologies used:</strong> Created
               with React, TypeScript, TailwindCSS. Hosted using GitHub Pages and
