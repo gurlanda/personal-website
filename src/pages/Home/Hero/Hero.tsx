@@ -1,20 +1,11 @@
 import React, { useRef, useState, useEffect } from 'react';
+import useComponentDimensions from '../../../utils/useComponentDimensions';
 import Sun from './Sun';
 import Navbar from './Navbar';
 
 const Hero: React.FC<{}> = () => {
   const headerRef = useRef<HTMLElement>(null);
-  const [componentWidth, setComponentWidth] = useState<number>(0);
-  const [componentHeight, setComponentHeight] = useState<number>(0);
-
-  useEffect(() => {
-    if (!headerRef.current) {
-      return;
-    }
-
-    setComponentWidth(headerRef.current.offsetWidth);
-    setComponentHeight(headerRef.current.offsetHeight);
-  }, []);
+  const [componentWidth, componentHeight] = useComponentDimensions(headerRef);
 
   return (
     <header
@@ -34,7 +25,11 @@ const Hero: React.FC<{}> = () => {
       </div>
 
       {/* Sun */}
-      <Sun top={componentHeight * 0.5} left={componentWidth * (2 / 7)} />
+      <Sun
+        top={componentHeight * 0.3}
+        left={componentWidth * 0.5}
+        mainDiskRadiusPx={110}
+      />
     </header>
   );
 };
