@@ -2,7 +2,7 @@ import React from 'react';
 
 const ContactForm: React.FC<{}> = () => {
   const inputFieldClassNames =
-    'border-[1px] border-yellow-800 border-opacity-50 bg-[rgb(254,253,241)] placeholder-yellow-900 placeholder-opacity-50 rounded-lg py-4 px-6 w-full';
+    'border-[1px] border-yellow-800 outline-yellow-800 border-opacity-50 bg-[rgb(254,253,241)] placeholder-yellow-900 placeholder-opacity-75 rounded-lg py-4 px-6 w-full';
   const buttonBackgroundClassNames =
     'bg-yellow-900 hover:bg-yellow-800 active:bg-yellow-700';
   return (
