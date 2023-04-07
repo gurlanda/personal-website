@@ -50,7 +50,7 @@ const Hero: React.FC<{}> = () => {
       <Sun
         top={getSunTop()}
         left={getSunLeft()}
-        mainDiskRadiusPx={getSunRadiusPx()}
+        sunDiskRadiusPx={getSunRadiusPx()}
       />
     </header>
   );

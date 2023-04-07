@@ -61,13 +61,13 @@ function rayGroup(radiusPx: number, startingAngleDegrees: number) {
 const Sun: React.FC<{
   top: number;
   left: number;
-  mainDiskRadiusPx?: number;
-}> = ({ top, left, mainDiskRadiusPx }) => {
+  sunDiskRadiusPx?: number;
+}> = ({ top, left, sunDiskRadiusPx }) => {
   const imgSideWidthPx = 8000;
   const halfWidthPx = imgSideWidthPx / 2;
-  const defaultMainDiskRadius = 200;
-  const mainDiskRadius =
-    mainDiskRadiusPx === undefined ? defaultMainDiskRadius : mainDiskRadiusPx;
+  const defaultSunDiskRadiusPx = 200;
+  const mainDiskRadiusPx =
+    sunDiskRadiusPx === undefined ? defaultSunDiskRadiusPx : sunDiskRadiusPx;
   const center = `${halfWidthPx},${halfWidthPx}`;
   const rayGroupAngularSpacingDegrees = 15 * unitAngleDegrees;
 
@@ -98,7 +98,7 @@ const Sun: React.FC<{
         height={imgSideWidthPx}
       >
         <g transform={`translate(${center})`}>
-          <circle cx={0} cy={0} r={mainDiskRadius} fill={sunColor} />
+          <circle cx={0} cy={0} r={mainDiskRadiusPx} fill={sunColor} />
           {rayGroups.map((number, index) =>
             rayGroup(imgSideWidthPx, index * rayGroupAngularSpacingDegrees)
           )}
