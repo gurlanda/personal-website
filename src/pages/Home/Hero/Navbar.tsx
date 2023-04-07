@@ -11,7 +11,7 @@ const Navbar: React.FC<{}> = () => {
         aria-expanded="false"
         className={`absolute top-8 right-8 z-[9999] w-10 aspect-square fa-solid ${
           isVisible ? 'fa-xmark' : 'fa-bars'
-        } text-3xl text-orange-900 ms:hidden`}
+        } text-3xl text-orange-900 ml:hidden`}
         onClick={() => {
           setIsVisible(!isVisible);
         }}
@@ -25,15 +25,15 @@ const Navbar: React.FC<{}> = () => {
           flex flex-col 
   fixed top-0 right-0 z-[9998] gap-5
   min-h-screen pl-7 pr-32 py-[min(20vh,5rem)]  
-  bg-yellow-300 max-ms:saturate-50 
+  bg-yellow-300 max-ml:saturate-50 
   font-paragraph-fira-sans font-light text-orange-900 text-2xl 
   transition-transform ${
-    isVisible ? 'max-ms:translate-x-[0%]' : 'max-ms:translate-x-full'
+    isVisible ? 'max-ml:translate-x-[0%]' : 'max-ml:translate-x-full'
   } 
   
-  ms:relative ms:flex-row ms:justify-end ms:gap-20 ms:items-center 
-  ms:px-7 ms:pt-5 ms:pb-10 ms:min-h-[auto]
-  ms:backdrop-blur-none ms:bg-transparent 
+  ml:relative ml:flex-row ml:justify-end ml:gap-20 ml:items-center 
+  ml:px-7 ml:pt-5 ml:pb-10 ml:min-h-[auto]
+  ml:backdrop-blur-none ml:bg-transparent 
   `}
       >
         <a href="#proficiencies" onClick={() => setIsVisible(false)}>
