@@ -1,22 +1,44 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef } from 'react';
 import useComponentDimensions from '../../../utils/useComponentDimensions';
+import useComponentPositionInContainer from '../../../utils/useComponentPositionInContainer';
 import Sun from './Sun';
 import Navbar from './Navbar';
 
 const Hero: React.FC<{}> = () => {
-  const headerRef = useRef<HTMLElement>(null);
-  const [componentWidth, componentHeight] = useComponentDimensions(headerRef);
+  const headerElementRef = useRef<HTMLElement>(null);
+  const nameRef = useRef<HTMLHeadingElement>(null);
+  const [nameWidth, nameHeight] = useComponentDimensions(nameRef);
+  const [nameLeft, nameTop] = useComponentPositionInContainer(nameRef);
+
+  function getMiddlePx(offsetPx: number, sizePx: number): number {
+    return offsetPx + sizePx * 0.5;
+  }
+
+  function getSunTop(): number {
+    return getMiddlePx(nameTop, nameHeight);
+  }
+
+  function getSunLeft(): number {
+    return getMiddlePx(nameLeft, nameWidth);
+  }
+
+  function getSunRadiusPx(): number {
+    return Math.min(nameWidth * 0.3, 200);
+  }
 
   return (
     <header
       className=" relative w-screen h-screen  text-orange-900 overflow-x-clip"
-      ref={headerRef}
+      ref={headerElementRef}
     >
       <Navbar />
 
       {/* Text */}
       <div className="absolute h-full flex flex-col justify-start gap-4 items-center z-50 pt-32">
-        <h1 className=" font-signika-negative leading-none font-semibold text-7xl text-center">
+        <h1
+          className=" font-signika-negative leading-none font-semibold text-7xl text-center"
+          ref={nameRef}
+        >
           Gamliel Urlanda
         </h1>
         <h2 className=" text-center font-thin text-5xl pl-2">
@@ -26,9 +48,9 @@ const Hero: React.FC<{}> = () => {
 
       {/* Sun */}
       <Sun
-        top={componentHeight * 0.3}
-        left={componentWidth * 0.5}
-        mainDiskRadiusPx={110}
+        top={getSunTop()}
+        left={getSunLeft()}
+        mainDiskRadiusPx={getSunRadiusPx()}
       />
     </header>
   );
