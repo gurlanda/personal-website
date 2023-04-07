@@ -28,7 +28,7 @@ const Hero: React.FC<{}> = () => {
 
   return (
     <header
-      className=" relative w-screen h-screen  text-orange-900 overflow-x-clip"
+      className=" relative w-screen h-screen text-orange-900"
       ref={headerElementRef}
     >
       <Navbar />

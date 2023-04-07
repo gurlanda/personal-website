@@ -8,7 +8,7 @@ import Footer from './Footer';
 
 const Home: React.FC<{}> = () => {
   return (
-    <div className="flex flex-col justify-center items-center h-full font-roboto overflow-clip bg-yellow-50">
+    <div className="flex flex-col justify-center items-center h-full font-roboto overflow-hidden bg-yellow-50">
       <Hero />
       <Skills />
       <Projects />
