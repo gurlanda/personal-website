@@ -34,9 +34,11 @@ const Hero: React.FC<{}> = () => {
       <Navbar />
 
       {/* Text */}
-      <div className="absolute h-full flex flex-col justify-start gap-4 items-center z-50 pt-32">
+      <div className="absolute h-full w-full flex flex-col justify-start gap-4 items-center z-50 pt-[23vh]">
         <h1
-          className=" font-signika-negative leading-none font-semibold text-7xl text-center"
+          className=" font-signika-negative leading-none font-semibold text-7xl text-center
+          
+          2xs:text-[5rem]"
           ref={nameRef}
         >
           Gamliel Urlanda
