@@ -15,10 +15,10 @@ const SkillsGroup: React.FC<{
       xs:grid-cols-3 xs:gap-6
       ms:gap-10"
       >
-        {logoArray.map((Logo, index) => (
+        {logoArray.map(({ icon: Icon, text }, index) => (
           <HoverEffect key={index}>
-            <Logo.icon />
-            <p className="font-extralight">{Logo.text}</p>
+            <Icon />
+            <p className="font-extralight">{text}</p>
           </HoverEffect>
         ))}
       </div>
@@ -49,6 +49,7 @@ const Skills: React.FC<{}> = () => {
     tsxLogosObject.npmjs,
     tsxLogosObject.github,
     tsxLogosObject.git,
+    tsxLogosObject.vscode,
   ];
 
   return (

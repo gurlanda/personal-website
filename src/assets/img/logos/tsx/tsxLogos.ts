@@ -13,6 +13,7 @@ import reactjs from './reactjsLogo';
 import sass from './sassLogo';
 import tailwindcss from './tailwindcssLogo';
 import typescript from './typescriptLogo';
+import vscode from './vsCodeLogo';
 
 export const asArray = [
   bulma,
@@ -30,6 +31,7 @@ export const asArray = [
   sass,
   tailwindcss,
   typescript,
+  vscode,
 ];
 
 export const asObject = {
@@ -48,4 +50,5 @@ export const asObject = {
   sass,
   tailwindcss,
   typescript,
+  vscode,
 };
