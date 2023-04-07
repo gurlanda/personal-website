@@ -81,9 +81,21 @@ const Sun: React.FC<{}> = () => {
       return offsetPx + sizePx * 0.5;
     }
 
+    function chooseWidthScaleResponsively(): number {
+      const windowWidth = window.innerWidth;
+      const mlBreakpointPx = 896;
+      if (windowWidth < mlBreakpointPx) {
+        return 0.35;
+      } else {
+        return 0.43;
+      }
+    }
+
+    const widthScale = chooseWidthScaleResponsively();
+
     setTop(getMiddlePx(targetTop, targetHeight));
     setLeft(getMiddlePx(targetLeft, targetWidth));
-    setSunDiskRadiusPx(Math.min(targetWidth * 0.43, 250));
+    setSunDiskRadiusPx(Math.min(targetWidth * widthScale, 250));
   }, [sunContext]);
 
   const imgSideWidthPx = pageHeight * 2;
