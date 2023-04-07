@@ -4,7 +4,7 @@ Welcome to my personal portfolio website repository! This website showcases my w
 
 ## Getting Started
 
-To access the website, [click here](https://gamurlanda.com). You can view my portfolio, read about my skills and experience, and contact me directly through the website (or contact me here on GitHub directly, whatever works best for you).
+To access the website, [click here](https://gamurlanda.com). You can view my portfolio, read about my skills and experience, and contact me directly through the website.
 
 ## Built With
 
