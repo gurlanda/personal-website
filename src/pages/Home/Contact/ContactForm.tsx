@@ -14,10 +14,14 @@ const ContactForm: React.FC<{}> = () => {
       action="https://formspree.io/f/xgebnqjv"
       method="post"
     >
-      <div className="w-full flex justify-start items-center mb-2">
+      <div className="w-full flex flex-col items-start justify-center gap-2 mb-2">
         <h2 className="font-normal text-5xl 2xs:text-[3.5rem] xs:text-6xl">
-          Get in touch!
+          Let's work together!
         </h2>
+        <h3 className="text-2xl font-light">
+          Whether you'd like to collaborate or just want to say hello, I'd love
+          to hear from you.
+        </h3>
       </div>
       <fieldset
         id="fs-frm-inputs"

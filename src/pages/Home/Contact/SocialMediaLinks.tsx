@@ -27,7 +27,7 @@ const CircleIcon: React.FC<{ iconClassNames: string; href: string }> = ({
 const SocialMediaLinks: React.FC<{}> = () => {
   return (
     <section className="pt-16 flex flex-col justify-center items-center gap-9 w-full">
-      <h3 className="font-extralight text-4xl text-center">
+      <h3 className="font-light text-4xl text-center">
         You can also find me in the usual places.
       </h3>
       <div
