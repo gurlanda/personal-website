@@ -1,6 +1,5 @@
 import React from 'react';
 import Hero from './Hero/Hero';
-import Tagline from './Tagline';
 import Skills from './Skills/Skills';
 import Projects from './Projects/Projects';
 import About from './About';
@@ -12,7 +11,6 @@ const Home: React.FC<{}> = () => {
     <div className="flex flex-col justify-center items-center h-full font-roboto overflow-clip bg-yellow-50">
       <Hero />
       <Skills />
-      {/* <Tagline /> */}
       <Projects />
       <About />
       <Contact />

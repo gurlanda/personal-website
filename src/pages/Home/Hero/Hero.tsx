@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Sun from './Sun';
+import Navbar from './Navbar';
 
 const Hero: React.FC<{}> = () => {
   const headerRef = useRef<HTMLElement>(null);
@@ -20,6 +21,29 @@ const Hero: React.FC<{}> = () => {
       className=" relative w-screen h-screen  text-orange-900 overflow-x-clip"
       ref={headerRef}
     >
+      <Navbar />
+
+      {/* Text */}
+      <div className="absolute h-full flex flex-col justify-start gap-4 items-center z-50 pt-32">
+        <h1 className=" font-signika-negative leading-none font-semibold text-7xl text-center">
+          Gamliel Urlanda
+        </h1>
+        <h2 className=" text-center font-thin text-5xl pl-2">
+          Front-end developer
+        </h2>
+      </div>
+
+      {/* Sun */}
+      <Sun top={componentHeight * 0.5} left={componentWidth * (2 / 7)} />
+    </header>
+  );
+};
+
+{
+  /* <header
+      className=" relative w-screen h-screen  text-orange-900 overflow-x-clip"
+      ref={headerRef}
+    >
       <div className="relative w-full flex justify-end z-50 px-24 py-10">
         <nav className=" flex justify-between gap-20 text-2xl font-thin">
           <a href="#proficiencies">Skills</a>
@@ -29,7 +53,7 @@ const Hero: React.FC<{}> = () => {
         </nav>
       </div>
 
-      {/* Text */}
+      Text
       <div className="absolute flex flex-col justify-center h-full mx-[10vw]   z-50">
         <h1 className=" font-signika-negative leading-none font-semibold text-[10rem]  ">
           Gam Urlanda
@@ -37,10 +61,9 @@ const Hero: React.FC<{}> = () => {
         <h2 className="  font-thin text-5xl pl-2">Front-end developer</h2>
       </div>
 
-      {/* Sun */}
+      Sun
       <Sun top={componentHeight * 0.5} left={componentWidth * (2 / 7)} />
-    </header>
-  );
-};
+    </header> */
+}
 
 export default Hero;
