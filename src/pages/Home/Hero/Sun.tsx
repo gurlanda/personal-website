@@ -1,4 +1,5 @@
 import React from 'react';
+import useFullPageDimensions from '../../../hooks/useFullPageDimensions';
 import Colors from '../../../utils/Colors';
 import Keyframe from '../../../utils/Keyframe';
 
@@ -63,7 +64,9 @@ const Sun: React.FC<{
   left: number;
   sunDiskRadiusPx?: number;
 }> = ({ top, left, sunDiskRadiusPx }) => {
-  const imgSideWidthPx = 8000;
+  const [pageWidth, pageHeight] = useFullPageDimensions();
+
+  const imgSideWidthPx = pageHeight * 2;
   const halfWidthPx = imgSideWidthPx / 2;
   const defaultSunDiskRadiusPx = 200;
   const mainDiskRadiusPx =

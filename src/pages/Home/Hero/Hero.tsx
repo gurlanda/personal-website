@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
-import useComponentDimensions from '../../../utils/useComponentDimensions';
-import useComponentPositionInContainer from '../../../utils/useComponentPositionInContainer';
+import useComponentDimensions from '../../../hooks/useComponentDimensions';
+import useComponentPositionInContainer from '../../../hooks/useComponentPositionInContainer';
 import Sun from './Sun';
 import Navbar from './Navbar';
 
@@ -65,32 +65,5 @@ const Hero: React.FC<{}> = () => {
     </header>
   );
 };
-
-{
-  /* <header
-      className=" relative w-screen h-screen text-orange-900 overflow-x-clip"
-      ref={headerRef}
-    >
-      <div className="relative w-full flex justify-end z-50 px-24 py-10">
-        <nav className=" flex justify-between gap-20 text-2xl font-thin">
-          <a href="#proficiencies">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-          <a href="#about">About</a>
-        </nav>
-      </div>
-
-      Text
-      <div className="absolute flex flex-col justify-center h-full mx-[10vw]   z-50">
-        <h1 className=" font-signika-negative leading-none font-semibold text-[10rem]  ">
-          Gam Urlanda
-        </h1>
-        <h2 className="  font-thin text-5xl pl-2">Front-end developer</h2>
-      </div>
-
-      Sun
-      <Sun top={componentHeight * 0.5} left={componentWidth * (2 / 7)} />
-    </header> */
-}
 
 export default Hero;
