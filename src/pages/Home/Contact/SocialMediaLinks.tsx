@@ -10,8 +10,10 @@ const CircleIcon: React.FC<{ iconClassNames: string; href: string }> = ({
       <a
         href={href}
         target="_blank"
-        className={`rounded-xl p-5 w-40
-        flex justify-center items-center bg-yellow-900 hover:bg-yellow-800 active:bg-yellow-700 text-yellow-50 text-6xl`}
+        className="p-5 w-2/3 flex justify-center items-center rounded-xl 
+         bg-yellow-900 hover:bg-yellow-800 active:bg-yellow-700
+         text-yellow-50 text-5xl
+         xs:w-44 sm:w-48 sm:text-6xl"
       >
         <i className={`${iconClassNames} text-center align-middle `} />
       </a>
@@ -19,23 +21,27 @@ const CircleIcon: React.FC<{ iconClassNames: string; href: string }> = ({
   );
 };
 
+// className={`rounded-xl p-5 w-40
+//         flex justify-center items-center bg-yellow-900 hover:bg-yellow-800 active:bg-yellow-700 text-yellow-50 text-6xl`}
+
 const SocialMediaLinks: React.FC<{}> = () => {
   return (
-    <section className="flex flex-col items-center gap-5 w-full h-[55vh] py-32">
-      <div className="w-full flex flex-col gap-12 justify-start items-center">
-        <h3 className="font-extralight text-5xl text-center">
-          You can also find me in the usual places.
-        </h3>
-        <div className="w-full flex justify-evenly gap-5 text-yellow-50 text-3xl">
-          <CircleIcon
-            href="https://www.linkedin.com/in/gamliel-urlanda/"
-            iconClassNames="fa-brands fa-linkedin-in"
-          />
-          <CircleIcon
-            href="https://github.com/gurlanda/"
-            iconClassNames="fa-brands fa-github"
-          />
-        </div>
+    <section className="pt-16 flex flex-col justify-center items-center gap-9 w-full">
+      <h3 className="font-extralight text-4xl text-center">
+        You can also find me in the usual places.
+      </h3>
+      <div
+        className="w-full max-w-lg flex flex-col justify-evenly gap-5 
+        xs:flex-row"
+      >
+        <CircleIcon
+          href="https://www.linkedin.com/in/gamliel-urlanda/"
+          iconClassNames="fa-brands fa-linkedin-in"
+        />
+        <CircleIcon
+          href="https://github.com/gurlanda/"
+          iconClassNames="fa-brands fa-github"
+        />
       </div>
     </section>
   );
