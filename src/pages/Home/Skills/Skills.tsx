@@ -38,12 +38,10 @@ const Skills: React.FC<{}> = () => {
   const otherProficiencies = [
     tsxLogosObject.html5,
     tsxLogosObject.css3,
-    tsxLogosObject.sass,
     tsxLogosObject.js,
     tsxLogosObject.nodejs,
     tsxLogosObject.expressjs,
     tsxLogosObject.mongodb,
-    tsxLogosObject.python,
   ];
 
   const devProficiencies = [
