@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.0c874108.css",
-    "main.js": "/static/js/main.f7615c89.js",
+    "main.js": "/static/js/main.b29c2319.js",
     "static/js/787.5809834d.chunk.js": "/static/js/787.5809834d.chunk.js",
     "static/media/hero-nobars-noaudio.mp4": "/static/media/hero-nobars-noaudio.d228cc422be636e1bca7.mp4",
     "index.html": "/index.html",
     "main.0c874108.css.map": "/static/css/main.0c874108.css.map",
-    "main.f7615c89.js.map": "/static/js/main.f7615c89.js.map",
+    "main.b29c2319.js.map": "/static/js/main.b29c2319.js.map",
     "787.5809834d.chunk.js.map": "/static/js/787.5809834d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0c874108.css",
-    "static/js/main.f7615c89.js"
+    "static/js/main.b29c2319.js"
   ]
 }
